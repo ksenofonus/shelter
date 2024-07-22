@@ -9,3 +9,7 @@
   font-weight: 400;
   color: $color-dark-xl;
 }
+@mixin flexcolumn {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 60px;
+}
+.header-nav{
+  &_link {
+    color: $color-dark-s;
+    text-decoration: none;
+  }
+  &_list {
+    display: flex;
+    gap: 35px;
+  }
+}
