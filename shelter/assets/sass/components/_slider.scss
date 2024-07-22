@@ -1,0 +1,27 @@
+.slider {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 60px;
+}
+.slider_item {
+  @include flexcolumn;
+  align-items: center;
+  background-color: $color-light-s;
+  max-width: 270px;
+  gap: 30px;
+  padding-bottom: 30px;
+  border-radius: 9px;
+}
+.pets-title {
+  max-width: 400px;
+  margin: 0 auto;
+  padding-top: 80px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+.pets_name {
+  font-family: $georgia;
+  font-size: 20px;
+  letter-spacing: 0.06em;
+  color: $color-dark-l;
+}

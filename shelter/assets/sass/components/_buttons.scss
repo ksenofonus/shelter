@@ -1,11 +1,15 @@
 .button {
+  max-width: 207px;
+  padding: 15px 45px;
+  border-radius: 100px;
   &_primary {
-    max-width: 207px;
-    padding: 15px 45px;
-    border-radius: 100px;
     background-color: $color-primary;
     &:hover {
       background-color: $color-primary-light;
     }
+  }
+  &_secondary {
+    background-color: $white;
+    border: 2px solid $color-primary;
   }
 }
