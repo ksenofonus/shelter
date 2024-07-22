@@ -1,0 +1,32 @@
+h2 {
+  @include header;
+  font-size: 44px;
+  line-height: 130%;
+  letter-spacing: 1em;
+}
+h3 {
+  @include header;
+  font-size: 35px;
+  line-height: 130%;
+}
+h4 {
+  @include header;
+  font-size: 20px;
+  line-height: 115%;
+}
+h5 {
+  @include header;
+  font-size: 15px;
+  line-height: 110%;
+}
+p {
+  @include parag;
+  font-size: 15px;
+  line-height: 160%;
+}
+.notes {
+  @include parag;
+  font-style: italic;
+  font-size: 12px;
+  line-height: 150%;
+}
