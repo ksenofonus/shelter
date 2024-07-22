@@ -15,16 +15,22 @@
   }
 }
 .start {
-  background-color: $start-screen-gradient-background;
-  background-image: radial-gradient(237.5% 111.8% at 0% 0%, rgb(91, 72, 58) 0%, rgb(38, 36, 37) 100%), url("../../img/noise_transparent.png");
-  background-size: 100%;
+  display: flex;
+  margin-top: 90px;
+  min-height: 728px;
+  background-image: url("../assets/img/start-screen-puppy.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  
   &_content {
     max-width: 460px;
   }
   &_title {
     color: $white;
+    margin-bottom: 42px;
   }
   &_text {
     color: $color-dark-s;
+    margin-bottom: 42px;
   }
 }
