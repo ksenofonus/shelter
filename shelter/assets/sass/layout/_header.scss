@@ -1,12 +1,8 @@
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 60px;
-  margin: 0 auto;
-  padding-top: 30px;
-  max-width: 1280px;
-  
+
+.header-top {
+ display: flex;
+ align-items: center;
+ min-height: 60px;
 }
 .header-nav{
   &_link {

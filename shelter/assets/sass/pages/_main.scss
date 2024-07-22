@@ -21,7 +21,6 @@
   background-image: url("../assets/img/start-screen-puppy.png");
   background-repeat: no-repeat;
   background-position: right;
-  
   &_content {
     max-width: 460px;
   }
@@ -33,4 +32,25 @@
     color: $color-dark-s;
     margin-bottom: 42px;
   }
+}
+.about {
+  padding: 80px 0 100px;
+  &-container {
+    margin: 0 auto;
+    max-width: 850px;
+    display: flex;
+    justify-content: space-between;
+    gap: 120px;
+  }
+  &_content {
+    max-width: 430px;
+    margin-top: 14px;
+    @include flexcolumn;
+    gap: 25px;
+  }
+  &_img {
+    width: 300px;
+    height: 100%;
+  }
+  
 }
