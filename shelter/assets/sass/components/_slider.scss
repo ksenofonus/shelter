@@ -2,6 +2,14 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 60px;
+  max-width: 990px;
+  overflow: hidden;
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
 }
 .slider_item {
   @include flexcolumn;
@@ -11,14 +19,9 @@
   gap: 30px;
   padding-bottom: 30px;
   border-radius: 9px;
+  margin-right: 90px;
 }
-.pets-title {
-  max-width: 400px;
-  margin: 0 auto;
-  padding-top: 80px;
-  padding-bottom: 60px;
-  text-align: center;
-}
+
 .pets_name {
   font-family: $georgia;
   font-size: 20px;

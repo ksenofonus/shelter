@@ -12,4 +12,18 @@
     background-color: $white;
     border: 2px solid $color-primary;
   }
+  &__circle {
+    width: 52px;
+    height: 52px;
+    border-radius: 100%;
+    border: 1px solid $color-primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.arrow {
+  &__right {
+    rotate: 180deg;
+  }
 }

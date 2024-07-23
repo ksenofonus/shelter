@@ -603,11 +603,32 @@ p {
   background-color: #fff;
   border: 2px solid #f1cdb3;
 }
+.button__circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 100%;
+  border: 1px solid #f1cdb3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow__right {
+  rotate: 180deg;
+}
 
 .slider {
   display: flex;
   justify-content: space-between;
   padding-bottom: 60px;
+  max-width: 990px;
+  overflow: hidden;
+}
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .slider_item {
@@ -619,14 +640,7 @@ p {
   gap: 30px;
   padding-bottom: 30px;
   border-radius: 9px;
-}
-
-.pets-title {
-  max-width: 400px;
-  margin: 0 auto;
-  padding-top: 80px;
-  padding-bottom: 60px;
-  text-align: center;
+  margin-right: 90px;
 }
 
 .pets_name {
@@ -719,4 +733,17 @@ p {
 .about_img {
   width: 300px;
   height: 100%;
+}
+
+.pets {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 0 80px;
+}
+.pets-title {
+  max-width: 400px;
+  margin: 0 auto;
+  padding-bottom: 60px;
+  text-align: center;
 }/*# sourceMappingURL=index.css.map */
