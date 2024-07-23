@@ -66,10 +66,5 @@
   @include flexcolumn;
   align-items: center;
   padding: 60px 0 80px;
-  &-title {
-    max-width: 400px;
-    margin: 0 auto;
-    padding-bottom: 60px;
-    text-align: center;
-  }
+  
 }

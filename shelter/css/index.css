@@ -516,6 +516,13 @@ button {
   padding: 0 40px;
 }
 
+.section-title {
+  max-width: 400px;
+  margin: 0 auto;
+  padding-bottom: 60px;
+  text-align: center;
+}
+
 h2 {
   font-family: "Georgia", "Arial", sans-serif;
   font-weight: 400;
@@ -589,7 +596,6 @@ p {
 }
 
 .button {
-  max-width: 207px;
   padding: 15px 45px;
   border-radius: 100px;
 }
@@ -740,10 +746,4 @@ p {
   flex-direction: column;
   align-items: center;
   padding: 60px 0 80px;
-}
-.pets-title {
-  max-width: 400px;
-  margin: 0 auto;
-  padding-bottom: 60px;
-  text-align: center;
 }/*# sourceMappingURL=index.css.map */
