@@ -1,0 +1,12 @@
+.help_item {
+  @include flexcolumn;
+  align-items: center;
+  gap: 30px;
+  &-title {
+    font-family: $georgia;
+    font-size: 20px;
+  }
+}
+.help_list {
+  display: grid;
+}

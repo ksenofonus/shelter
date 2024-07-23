@@ -68,7 +68,12 @@
   align-items: center;
 }
 .help-content {
-  display: grid;
+  margin: 0 auto;
+  padding: 0 87px;
+}
+.help_icon {
+  width: 60px;
+  height: 60px;
 }
 .donation {
   display: flex;
