@@ -13,6 +13,7 @@
   max-height: 234px;
   @include flexcolumn;
   justify-content: space-between;
+  padding-top: 10px;
   &_item {
     text-decoration: none;
     color: $color-primary;
@@ -23,6 +24,15 @@
 .footer_title {
   color: $white;
 }
-.footer_img {
+.footer-img {
   max-height: 310px;
+}
+.contact-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.contacts_icon {
+  width: 40px;
+  height: 32px;
 }
