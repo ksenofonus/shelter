@@ -4,10 +4,28 @@
  align-items: center;
  min-height: 60px;
 }
-.header-nav{
+.header-nav {
   &_link {
     color: $color-dark-s;
     text-decoration: none;
+    display: block;
+    position: relative;
+    &__inactive {
+      cursor: default;
+      &::after {
+        @include underlink;
+        width: 100%;
+      }
+    }
+    &:not(.header-nav_link__inactive)::after {
+      @include underlink;
+      width: 0;
+      transition: all .5s ease-out;
+    }
+    &:hover::after {
+      width: 100%;
+    }
+    
   }
   &_list {
     display: flex;

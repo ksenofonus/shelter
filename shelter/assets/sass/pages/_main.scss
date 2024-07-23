@@ -11,22 +11,7 @@
 .donation-container {
   background-color: $color-light-l;
 }
-.header-nav_item:first-child {
-  position: relative;
-  & > a {
-    cursor: default;
-  }
-  &::after {
-    position: absolute;
-    content: "";
-    display: block;
-    width: 114px;
-    height: 3px;
-    background-color: $color-primary;
-    bottom: -3px;
-    left: 0;
-  }
-}
+
 .main-section {
   padding: 80px 0 100px;
 }

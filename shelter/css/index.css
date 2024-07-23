@@ -691,6 +691,37 @@ p {
 .header-nav_link {
   color: #cdcdcd;
   text-decoration: none;
+  display: block;
+  position: relative;
+}
+.header-nav_link__inactive {
+  cursor: default;
+}
+.header-nav_link__inactive::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #f1cdb3;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+}
+.header-nav_link:not(.header-nav_link__inactive)::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #f1cdb3;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  transition: all 0.5s ease-out;
+}
+.header-nav_link:hover::after {
+  width: 100%;
 }
 .header-nav_list {
   display: flex;
@@ -781,23 +812,6 @@ p {
 .pets-container,
 .donation-container {
   background-color: #f6f6f6;
-}
-
-.header-nav_item:first-child {
-  position: relative;
-}
-.header-nav_item:first-child > a {
-  cursor: default;
-}
-.header-nav_item:first-child::after {
-  position: absolute;
-  content: "";
-  display: block;
-  width: 114px;
-  height: 3px;
-  background-color: #f1cdb3;
-  bottom: -3px;
-  left: 0;
 }
 
 .main-section {
