@@ -523,6 +523,13 @@ button {
   text-align: center;
 }
 
+.section_content {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
 h2 {
   font-family: "Georgia", "Arial", sans-serif;
   font-weight: 400;
@@ -574,6 +581,7 @@ p {
   font-style: italic;
   font-size: 12px;
   line-height: 150%;
+  color: #b2b2b2;
 }
 
 .logo {
@@ -744,16 +752,12 @@ p {
   margin: 0 auto;
   justify-content: space-between;
 }
-.about_content {
-  max-width: 430px;
-  margin-top: 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
 .about_img {
-  width: 300px;
+  width: auto;
   height: 100%;
+}
+.about .section_content {
+  max-width: 430px;
 }
 
 .pets {
@@ -764,4 +768,14 @@ p {
 
 .help-content {
   display: grid;
+}
+
+.donation {
+  display: flex;
+  margin: 0 auto;
+  gap: 30px;
+  justify-content: center;
+}
+.donation > .section_content {
+  max-width: 380px;
 }/*# sourceMappingURL=index.css.map */

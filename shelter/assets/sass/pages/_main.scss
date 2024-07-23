@@ -53,21 +53,28 @@
   display: flex;
   margin: 0 auto;
   justify-content: space-between;
-  &_content {
-    max-width: 430px;
-    margin-top: 14px;
-    @include flexcolumn;
-    gap: 25px;
-  }
   &_img {
-    width: 300px;
+    width: auto;
     height: 100%;
   }
+  & .section_content {
+    max-width: 430px;
+  }
 }
+
 .pets {
   @include flexcolumn;
   align-items: center;
 }
 .help-content {
   display: grid;
+}
+.donation {
+  display: flex;
+  margin: 0 auto;
+  gap: 30px;
+  justify-content: center;
+  & > .section_content {
+    max-width: 380px;
+  }
 }
