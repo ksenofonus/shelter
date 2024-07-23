@@ -1,0 +1,28 @@
+.footer-container {
+  background: url("../assets/img/noise_transparent.png"),
+              radial-gradient(100% 73% at 6% 50%, #5B483A 0%, #262425 100%);
+  background-color: $screen-gradient-background;
+  padding-top: 40px;
+}
+.contacts-container {
+  display: flex;
+  justify-content: space-between;
+}
+.contacts {
+  max-width: 300px;
+  max-height: 234px;
+  @include flexcolumn;
+  justify-content: space-between;
+  &_item {
+    text-decoration: none;
+    color: $color-primary;
+    font-size: 20px;
+    font-family: $georgia;
+  }
+}
+.footer_title {
+  color: $white;
+}
+.footer_img {
+  max-height: 310px;
+}

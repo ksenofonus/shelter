@@ -691,6 +691,39 @@ p {
   gap: 35px;
 }
 
+.footer-container {
+  background: url("../assets/img/noise_transparent.png"), radial-gradient(100% 73% at 6% 50%, #5B483A 0%, #262425 100%);
+  background-color: #211f20;
+  padding-top: 40px;
+}
+
+.contacts-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contacts {
+  max-width: 300px;
+  max-height: 234px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.contacts_item {
+  text-decoration: none;
+  color: #f1cdb3;
+  font-size: 20px;
+  font-family: "Georgia", "Arial", sans-serif;
+}
+
+.footer_title {
+  color: #fff;
+}
+
+.footer_img {
+  max-height: 310px;
+}
+
 .header-container {
   background: url("../assets/img/noise_transparent.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
   background-color: #211f20;
@@ -701,7 +734,8 @@ p {
   background-color: #fff;
 }
 
-.pets-container {
+.pets-container,
+.donation-container {
   background-color: #f6f6f6;
 }
 
