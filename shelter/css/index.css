@@ -604,10 +604,16 @@ p {
 }
 .button_primary:hover {
   background-color: #fddcc4;
+  transition: all ease 0.5s;
 }
 .button_secondary {
   background-color: #fff;
   border: 2px solid #f1cdb3;
+}
+.button_secondary:hover {
+  background-color: #fddcc4;
+  border-color: #fddcc4;
+  transition: all ease 0.5s;
 }
 .button__circle {
   width: 52px;
@@ -617,6 +623,12 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+}
+.button__circle:hover {
+  background-color: #fddcc4;
+  border-color: #fddcc4;
+  transition: all ease 0.5s;
 }
 
 .arrow__right {
