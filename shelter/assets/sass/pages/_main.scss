@@ -77,5 +77,29 @@
   justify-content: center;
   & > .section_content {
     max-width: 380px;
+    gap: 20px;
+  }
+}
+.card-number {
+  width: 100%;
+  font-family: $georgia;
+  padding: 10px 15px 10px 60px;
+  font-size: 20px;
+  background-color: $color-primary;
+  border-radius: 9px;
+  color: $color-dark-l;
+}
+.card-label {
+  max-width: 350px;
+  position: relative;
+  &::before {
+    position: absolute;
+    left: 15px;
+    bottom: 10px;
+    content: "";
+    display: block;
+    background-image: url('../assets/img/icons/credit-card.svg');
+    width: 30px;
+    height: 23px;
   }
 }

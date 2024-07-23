@@ -510,6 +510,12 @@ button {
   cursor: pointer;
 }
 
+input {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
 .content-container {
   max-width: 1280px;
   margin: 0 auto;
@@ -692,7 +698,7 @@ p {
 }
 
 .footer-container {
-  background: url("../assets/img/noise_transparent.png"), radial-gradient(100% 73% at 6% 50%, #5B483A 0%, #262425 100%);
+  background: url("../assets/img/noise_transparent.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
   background-color: #211f20;
   padding-top: 40px;
 }
@@ -824,4 +830,30 @@ p {
 }
 .donation > .section_content {
   max-width: 380px;
+  gap: 20px;
+}
+
+.card-number {
+  width: 100%;
+  font-family: "Georgia", "Arial", sans-serif;
+  padding: 10px 15px 10px 60px;
+  font-size: 20px;
+  background-color: #f1cdb3;
+  border-radius: 9px;
+  color: #545454;
+}
+
+.card-label {
+  max-width: 350px;
+  position: relative;
+}
+.card-label::before {
+  position: absolute;
+  left: 15px;
+  bottom: 10px;
+  content: "";
+  display: block;
+  background-image: url("../assets/img/icons/credit-card.svg");
+  width: 30px;
+  height: 23px;
 }/*# sourceMappingURL=index.css.map */
