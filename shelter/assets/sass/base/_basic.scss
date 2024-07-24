@@ -1,9 +1,15 @@
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+h1 {
+  margin: 0;
+  display: none;
+}
+html {
+  scroll-behavior: smooth;
+}
 ul {
   list-style: none;
 }

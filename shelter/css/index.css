@@ -490,6 +490,15 @@ template {
   box-sizing: border-box;
 }
 
+h1 {
+  margin: 0;
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 ul {
   list-style: none;
 }
@@ -597,6 +606,7 @@ p {
   gap: 10px;
 }
 .logo_title {
+  text-decoration: none;
   font-family: "Georgia", "Arial", sans-serif;
   text-transform: capitalize;
   color: #f1cdb3;
@@ -618,11 +628,16 @@ p {
   letter-spacing: 0.01em;
   border: 2px solid #f1cdb3;
 }
+.button > a {
+  text-decoration: none;
+  color: inherit;
+}
 .button_primary {
   background-color: #f1cdb3;
 }
 .button_primary:hover {
   background-color: #fddcc4;
+  border-color: #fddcc4;
   transition: all ease 0.5s;
 }
 .button_secondary {
@@ -714,6 +729,13 @@ p {
   gap: 20px;
   color: #292929;
 }
+.pets_pagination .button__circle {
+  font-family: "Georgia", "Arial", sans-serif;
+  font-weight: 400;
+  color: #545454;
+  font-size: 20px;
+  line-height: 115%;
+}
 
 .header-top {
   display: flex;
@@ -762,7 +784,7 @@ p {
 }
 
 .footer-container {
-  background: url("../assets/img/noise_transparent.png"), radial-gradient(100% 500% at 0% 0%, #513d2f 0%, #1a1a1c 100%);
+  background: url("../assets/img/noise_transparent@2x.png"), radial-gradient(100% 500% at 0% 0%, #513d2f 0%, #1a1a1c 100%);
   background-color: #211f20;
   padding-top: 41px;
 }
@@ -850,7 +872,7 @@ p {
 }
 
 .header-container {
-  background: url("../assets/img/noise_transparent.png"), radial-gradient(94% 200% at 0% 0%, #5B483A 0%, #262425 100%);
+  background: url("../assets/img/noise_transparent@2x.png"), radial-gradient(70% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
   background-color: #211f20;
 }
 
@@ -946,7 +968,7 @@ p {
 }
 
 .card-number {
-  width: 100%;
+  max-width: 350px;
   font-family: "Georgia", "Arial", sans-serif;
   padding: 10px 15px 10px 60px;
   font-size: 20px;
@@ -954,13 +976,11 @@ p {
   border-radius: 9px;
   color: #545454;
   letter-spacing: 0.06em;
-}
-
-.card-label {
-  max-width: 350px;
+  text-decoration: none;
+  display: block;
   position: relative;
 }
-.card-label::before {
+.card-number::before {
   position: absolute;
   left: 15px;
   bottom: 10px;

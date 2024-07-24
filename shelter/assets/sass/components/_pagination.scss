@@ -3,4 +3,9 @@
   margin: 0 auto;
   gap: 20px;
   color: $color-dark-3xl;
+  & .button__circle {
+    @include header;
+    font-size: 20px;
+    line-height: 115%;
+  }
 }

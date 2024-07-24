@@ -4,10 +4,15 @@
   font-size: 19px;
   letter-spacing: 0.01em;
   border: 2px solid $color-primary;
+  & > a {
+    text-decoration: none;
+    color: inherit;
+  }
   &_primary {
     background-color: $color-primary;
     &:hover {
       background-color: $color-primary-light;
+      border-color: $color-primary-light;
       transition: all ease .5s;
     }
   }
