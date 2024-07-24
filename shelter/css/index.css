@@ -502,7 +502,6 @@ body {
   font-weight: 400;
   color: #4c4c4c;
   font-size: 15px;
-  line-height: 160%;
 }
 
 button {
@@ -542,7 +541,6 @@ h2 {
   font-family: "Georgia", "Arial", sans-serif;
   font-weight: 400;
   color: #545454;
-  letter-spacing: 0.06em;
   font-size: 44px;
   line-height: 130%;
 }
@@ -551,7 +549,6 @@ h3 {
   font-family: "Georgia", "Arial", sans-serif;
   font-weight: 400;
   color: #545454;
-  letter-spacing: 0.06em;
   font-size: 35px;
   line-height: 130%;
 }
@@ -560,7 +557,6 @@ h4 {
   font-family: "Georgia", "Arial", sans-serif;
   font-weight: 400;
   color: #545454;
-  letter-spacing: 0.06em;
   font-size: 20px;
   line-height: 115%;
 }
@@ -569,7 +565,6 @@ h5 {
   font-family: "Georgia", "Arial", sans-serif;
   font-weight: 400;
   color: #545454;
-  letter-spacing: 0.06em;
   font-size: 15px;
   line-height: 110%;
 }
@@ -595,25 +590,30 @@ p {
 .logo {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin-right: auto;
+  gap: 10px;
 }
 .logo_title {
+  font-family: "Georgia", "Arial", sans-serif;
   text-transform: capitalize;
   color: #f1cdb3;
   font-size: 32px;
-  line-height: 110%;
+  line-height: 113%;
   letter-spacing: 0.06em;
 }
 .logo_subtitle {
-  font-family: "Arial", "Arial", sans-serif;
   font-size: 13px;
   letter-spacing: 0.1em;
   color: #fff;
+  margin-left: 1px;
 }
 
 .button {
-  padding: 15px 45px;
+  padding: 15px 45px 15px 44px;
   border-radius: 100px;
+  font-size: 19px;
+  letter-spacing: 0.01em;
 }
 .button_primary {
   background-color: #f1cdb3;
@@ -708,7 +708,6 @@ p {
 .header-top {
   display: flex;
   align-items: center;
-  min-height: 60px;
   padding: 30px 0;
 }
 
@@ -749,7 +748,8 @@ p {
 }
 .header-nav_list {
   display: flex;
-  gap: 35px;
+  gap: 36px;
+  margin-bottom: 5px;
 }
 
 .footer-container {
@@ -850,22 +850,27 @@ p {
 
 .start {
   display: flex;
-  margin-top: 90px;
   min-height: 728px;
+  margin-top: 59px;
   background-image: url("../assets/img/start-screen-puppy.png");
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: 100%;
 }
 .start_content {
   max-width: 460px;
+  margin-top: 164px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 41px;
 }
 .start_title {
   color: #fff;
-  margin-bottom: 42px;
+  max-width: 310px;
 }
 .start_text {
   color: #cdcdcd;
-  margin-bottom: 42px;
+  margin-bottom: 1px;
 }
 
 .about {

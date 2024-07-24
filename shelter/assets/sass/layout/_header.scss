@@ -2,7 +2,6 @@
 .header-top {
  display: flex;
  align-items: center;
- min-height: 60px;
  padding: 30px 0;
 }
 .header-nav {
@@ -30,6 +29,7 @@
   }
   &_list {
     display: flex;
-    gap: 35px;
+    gap: 36px;
+    margin-bottom: 5px;
   }
 }
