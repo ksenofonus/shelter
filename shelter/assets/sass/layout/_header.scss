@@ -14,7 +14,6 @@
       cursor: default;
       &::after {
         @include underlink;
-        width: 100%;
       }
     }
     &:not(.header-nav_link__inactive)::after {
@@ -23,13 +22,13 @@
       transition: all .5s ease-out;
     }
     &:hover::after {
-      width: 100%;
+      width: 101%;
     }
     
   }
   &_list {
     display: flex;
     gap: 36px;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
   }
 }
