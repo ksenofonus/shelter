@@ -689,6 +689,14 @@ p {
   letter-spacing: 0.06em;
   color: #545454;
 }
+.pets:hover {
+  background-color: #fff;
+}
+.pets:hover .button_secondary {
+  background-color: #fddcc4;
+  border-color: #fddcc4;
+  transition: all ease 0.5s;
+}
 
 .pets_pagination {
   display: flex;

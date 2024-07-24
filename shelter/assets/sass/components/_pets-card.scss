@@ -13,4 +13,12 @@
     letter-spacing: 0.06em;
     color: $color-dark-l;
   }
+  &:hover {
+    background-color: $white;
+    & .button_secondary{
+      background-color: $color-primary-light;
+      border-color: $color-primary-light;
+      transition: all ease .5s;
+    }
+  }
 }
