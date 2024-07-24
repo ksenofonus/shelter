@@ -509,6 +509,7 @@ button {
   border: none;
   font-family: "Georgia", "Arial", sans-serif;
   cursor: pointer;
+  background-color: transparent;
 }
 
 input {
@@ -634,13 +635,21 @@ p {
   width: 52px;
   height: 52px;
   border-radius: 100%;
-  border: 1px solid #f1cdb3;
+  border: 2px solid #f1cdb3;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  flex-shrink: 0;
 }
-.button__circle:hover {
+.button__circle-inactive {
+  border-color: #cdcdcd;
+  cursor: default;
+}
+.button__circle-inactive > h4 {
+  color: #cdcdcd;
+}
+.button__circle:not(.button__circle-inactive):hover {
   background-color: #fddcc4;
   border-color: #fddcc4;
   transition: all ease 0.5s;
@@ -653,8 +662,8 @@ p {
 .slider {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 60px;
-  max-width: 990px;
+  padding: 0 53px 60px;
+  width: 100%;
   overflow: hidden;
 }
 .slider-container {
@@ -673,7 +682,6 @@ p {
   gap: 30px;
   padding-bottom: 30px;
   border-radius: 9px;
-  margin-right: 90px;
 }
 .pets_name {
   font-family: "Georgia", "Arial", sans-serif;
@@ -682,10 +690,18 @@ p {
   color: #545454;
 }
 
+.pets_pagination {
+  display: flex;
+  margin: 0 auto;
+  gap: 20px;
+  color: #292929;
+}
+
 .header-top {
   display: flex;
   align-items: center;
   min-height: 60px;
+  padding: 30px 0;
 }
 
 .header-nav_link {
@@ -806,7 +822,6 @@ p {
 .header-container {
   background: url("../assets/img/noise_transparent.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
   background-color: #211f20;
-  padding-top: 30px;
 }
 
 .about-container {
@@ -908,4 +923,36 @@ p {
   background-image: url("../assets/img/icons/credit-card.svg");
   width: 30px;
   height: 23px;
+}
+
+.pets_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+
+.pets_menu {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+  row-gap: 30px;
+}
+
+.header-container-pets {
+  background: #fff;
+}
+.header-container-pets .logo {
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+}
+.header-container-pets .logo_title {
+  color: #545454;
+}
+.header-container-pets .logo_subtitle {
+  color: #292929;
+}
+.header-container-pets .header-nav_link {
+  color: #545454;
 }/*# sourceMappingURL=index.css.map */

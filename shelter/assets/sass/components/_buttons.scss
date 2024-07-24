@@ -21,12 +21,20 @@
     width: 52px;
     height: 52px;
     border-radius: 100%;
-    border: 1px solid $color-primary;
+    border: 2px solid $color-primary;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    &:hover {
+    flex-shrink: 0;
+    &-inactive {
+      border-color: $color-dark-s;
+      cursor: default;
+      & > h4 {
+        color: $color-dark-s;
+      }
+    }
+    &:not(.button__circle-inactive):hover {
       background-color: $color-primary-light;
       border-color: $color-primary-light;
       transition: all ease .5s;
