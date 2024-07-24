@@ -41,21 +41,24 @@
     <main>
       <div class="container about-container">
         <div class="content-container">
-          <section class="main-section about" id="about">
-            <div class="about_img">
-              <img src="/assets/img/about-pets.png" alt="about">
+          <section class="main-section" id="about">
+            <div class="about">
+              <div class="about_img">
+                <img src="/assets/img/about-pets.png" alt="about">
+              </div>
+              <div class="section_content">
+                <h3 class="section_title">About the shelter “Cozy House”</h3>
+                <p class="section_text">Currently we have 121 dogs and 342 cats on our hands and statistics show that only 20% of them will find a family. The others will continue to live with us and will be waiting for a lucky chance to become dearly loved.</p>
+                <p class="section_text">We feed our wards with the best food and make sure that they do not get sick, feel comfortable (including psychologically) and well. We are supported by 87 volunteers and 28 employees of various skill levels. About 12% of the animals are taken by the shelter staff. Taking care of the animals, they become attached to the pets and would hardly ever leave them alone.</p>
+              </div>
             </div>
-            <div class="section_content">
-              <h3 class="section_title">About the shelter “Cozy House”</h3>
-              <p class="section_text">Currently we have 121 dogs and 342 cats on our hands and statistics show that only 20% of them will find a family. The others will continue to live with us and will be waiting for a lucky chance to become dearly loved.</p>
-              <p class="section_text">We feed our wards with the best food and make sure that they do not get sick, feel comfortable (including psychologically) and well. We are supported by 87 volunteers and 28 employees of various skill levels. About 12% of the animals are taken by the shelter staff. Taking care of the animals, they become attached to the pets and would hardly ever leave them alone.</p>
-            </div>
+            
           </section>
         </div>
       </div>
       <div class="container pets-container">
         <div class="content-container">
-          <section class="main-section pets">
+          <section class="main-section pets-section">
             <h3 class="section-title">Our friends who<br> are looking for a house</h3>
             <div class="slider-container">
               <div class="button__circle arrow arrow__left">
@@ -64,21 +67,23 @@
                 </svg>
               </div>
               <div class="slider">
-                <div class="slider_item">
+                <!-- pets card start -->
+                <div class="slider_item pets">
                   <div class="pets_img">
                     <img src="/assets/img/pets/pets-katrine.png" alt="Katrine">
                   </div>
                   <div class="pets_name">Katrine</div>
                   <button class="button button_secondary">Learn more</button>
                 </div>
-                <div class="slider_item">
+                <!-- pets card end -->
+                <div class="slider_item pets">
                   <div class="pets_img">
                     <img src="/assets/img/pets/pets-jennifer.png" alt="Jennifer">
                   </div>
                   <div class="pets_name">Jennifer</div>
                   <button class="button button_secondary">Learn more</button>
                 </div>
-                <div class="slider_item">
+                <div class="slider_item pets">
                   <div class="pets_img">
                     <img src="/assets/img/pets/pets-woody.png" alt="Woody">
                   </div>
@@ -163,17 +168,19 @@
       </div>
       <div class="container donation-container">
         <div class="content-container">  
-          <section class="main-section donation">
-            <div class="about_img">
-              <img src="/assets/img/donation-dog.png" alt="donation-dog">
-            </div>
-            <div class="section_content">
-              <h3 class="section_title">You can also<br> make a donation</h3>
-              <p class="section_text">Name of the bank / Type of bank account</p>
-              <label for="card-number" class="card-label">
-                <input type="text" class="card-number" id="card-number" placeholder="8380 2880 8028 8791 7435">
-              </label>
-              <p class="section_text notes">Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+          <section class="main-section">
+            <div class="donation">
+              <div class="section_img">
+                <img src="/assets/img/donation-dog.png" alt="donation-dog">
+              </div>
+              <div class="section_content">
+                <h3 class="section_title">You can also<br> make a donation</h3>
+                <p class="section_text">Name of the bank / Type of bank account</p>
+                <label for="card-number" class="card-label">
+                  <input type="text" class="card-number" id="card-number" placeholder="8380 2880 8028 8791 7435">
+                </label>
+                <p class="section_text notes">Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+              </div>
             </div>
           </section>
         </div>

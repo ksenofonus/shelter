@@ -11,20 +11,6 @@
     width: 100%;
   }
 }
-.slider_item {
-  @include flexcolumn;
-  align-items: center;
-  background-color: $color-light-s;
-  max-width: 270px;
-  gap: 30px;
-  padding-bottom: 30px;
-  border-radius: 9px;
-  margin-right: 90px;
-}
 
-.pets_name {
-  font-family: $georgia;
-  font-size: 20px;
-  letter-spacing: 0.06em;
-  color: $color-dark-l;
-}
+
+

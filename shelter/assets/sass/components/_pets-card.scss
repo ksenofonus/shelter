@@ -1,0 +1,17 @@
+//pets card
+.pets {
+  @include flexcolumn;
+  align-items: center;
+  background-color: $color-light-s;
+  max-width: 270px;
+  gap: 30px;
+  padding-bottom: 30px;
+  border-radius: 9px;
+  margin-right: 90px;
+  &_name {
+    font-family: $georgia;
+    font-size: 20px;
+    letter-spacing: 0.06em;
+    color: $color-dark-l;
+  }
+}

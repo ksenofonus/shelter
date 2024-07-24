@@ -9,9 +9,10 @@ ul {
 }
 
 body {
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   @include parag;
-  font-weight: 400;
   font-size: 15px;
   line-height: 160%;
 }
