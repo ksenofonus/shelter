@@ -6,7 +6,8 @@ h2 {
 h3 {
   @include header;
   font-size: 35px;
-  line-height: 130%;
+  line-height: 128%;
+  letter-spacing: 0.06em;
 }
 h4 {
   @include header;
@@ -16,7 +17,8 @@ h4 {
 h5 {
   @include header;
   font-size: 15px;
-  line-height: 110%;
+  line-height: 16px;
+  letter-spacing: 0.06em;
 }
 p {
   @include parag;

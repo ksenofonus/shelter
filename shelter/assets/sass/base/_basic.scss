@@ -34,11 +34,11 @@ input {
 .section-title {
   max-width: 400px;
   margin: 0 auto;
-  padding-bottom: 60px;
+  padding-bottom: 59px;
   text-align: center;
 }
 .section_content {
-  margin-top: 14px;
+  margin-top: 15px;
   @include flexcolumn;
   gap: 25px;
 }

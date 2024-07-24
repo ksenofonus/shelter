@@ -5,8 +5,13 @@
   background-color: $color-light-s;
   max-width: 270px;
   gap: 30px;
-  padding-bottom: 30px;
   border-radius: 9px;
+  padding-bottom: 30px;
+  &_img {
+    width: 270px;
+    height: 270px;
+    overflow: hidden;
+  }
   &_name {
     font-family: $georgia;
     font-size: 20px;

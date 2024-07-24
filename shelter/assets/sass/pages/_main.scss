@@ -1,6 +1,6 @@
 .header-container {
   background: url("../assets/img/noise_transparent.png"),
-              radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
+              radial-gradient(94% 200% at 0% 0%, #5B483A 0%, #262425 100%);
   background-color: $screen-gradient-background;
 }
 .about-container {
@@ -46,7 +46,7 @@
   gap: 120px;
   &_img {
     width: auto;
-    height: 100%;
+    height: 408px;
   }
   & .section_content {
     max-width: 430px;
@@ -68,9 +68,14 @@
   margin: 0 auto;
   gap: 30px;
   justify-content: center;
+  &_img {
+    height: 261px;
+    margin-top: 11px;
+  }
   & > .section_content {
     max-width: 380px;
     gap: 20px;
+    margin-top: 0;
   }
 }
 .card-number {
@@ -81,6 +86,7 @@
   background-color: $color-primary;
   border-radius: 9px;
   color: $color-dark-l;
+  letter-spacing: 0.06em;
 }
 .card-label {
   max-width: 350px;
