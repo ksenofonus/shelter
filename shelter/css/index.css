@@ -703,6 +703,7 @@ p {
   gap: 30px;
   border-radius: 9px;
   padding-bottom: 30px;
+  cursor: pointer;
 }
 .pets_img {
   width: 270px;
