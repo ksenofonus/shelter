@@ -2,8 +2,8 @@
   @include flexcolumn;
   align-items: center;
   margin-right: auto;
-  gap: 10px;
   &_title {
+    padding-bottom: 10px;
     font-family: $georgia;
     text-transform: capitalize;
     color: $color-primary;
