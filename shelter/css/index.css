@@ -664,8 +664,8 @@ p {
   border-color: #cdcdcd;
   cursor: default;
 }
-.button__circle-inactive > h4 {
-  color: #cdcdcd;
+.button__circle-active {
+  background-color: #f1cdb3;
 }
 .button__circle:not(.button__circle-inactive):hover {
   background-color: #fddcc4;
@@ -753,6 +753,7 @@ p {
 }
 .header-nav_link__inactive {
   cursor: default;
+  color: #fafafa;
 }
 .header-nav_link__inactive::after {
   position: absolute;
@@ -1023,4 +1024,7 @@ p {
 }
 .header-container-pets .header-nav_link {
   color: #545454;
+}
+.header-container-pets .header-nav_link__inactive {
+  color: #292929;
 }/*# sourceMappingURL=index.css.map */
