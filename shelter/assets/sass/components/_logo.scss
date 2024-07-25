@@ -1,0 +1,20 @@
+.logo {
+  @include flexcolumn;
+  align-items: center;
+  margin-right: auto;
+  &_title {
+    padding-bottom: 10px;
+    font-family: $georgia;
+    text-transform: capitalize;
+    color: $color-primary;
+    font-size: 32px;
+    line-height: 113%;
+    letter-spacing: 0.06em;
+  }
+  &_subtitle {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    color: $white;
+    margin-left: 3px;
+  }
+}

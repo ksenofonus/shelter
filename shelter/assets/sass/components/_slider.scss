@@ -1,0 +1,19 @@
+.slider {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 53px;
+  width: 100%;
+  overflow: hidden;
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  &-container {
+    margin-bottom: 60px;
+  }
+}
+
+
+

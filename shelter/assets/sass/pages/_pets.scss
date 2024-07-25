@@ -1,0 +1,27 @@
+.pets_wrapper {
+  @include flexcolumn;
+  gap: 61px;
+}
+.pets_menu {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+  row-gap: 30px;
+}
+.header-container-pets {
+  background: $white;
+  & .logo {
+    @include flexcolumn;
+    margin-right: auto;
+    &_title {
+      color: $color-dark-l;
+    }
+    &_subtitle {
+      color: $color-dark-3xl;
+    }
+  }
+  & .header-nav_link {
+    color: $color-dark-l;
+  }
+}
