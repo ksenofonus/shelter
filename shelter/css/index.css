@@ -503,6 +503,10 @@ ul {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -606,7 +610,6 @@ p {
   gap: 10px;
 }
 .logo_title {
-  text-decoration: none;
   font-family: "Georgia", "Arial", sans-serif;
   text-transform: capitalize;
   color: #f1cdb3;
@@ -627,10 +630,8 @@ p {
   font-size: 19px;
   letter-spacing: 0.01em;
   border: 2px solid #f1cdb3;
-}
-.button > a {
-  text-decoration: none;
-  color: inherit;
+  color: #292929;
+  font-family: "Georgia", "Arial", sans-serif;
 }
 .button_primary {
   background-color: #f1cdb3;

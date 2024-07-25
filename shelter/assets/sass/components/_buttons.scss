@@ -4,10 +4,8 @@
   font-size: 19px;
   letter-spacing: 0.01em;
   border: 2px solid $color-primary;
-  & > a {
-    text-decoration: none;
-    color: inherit;
-  }
+  color: $color-dark-3xl;
+  font-family: $georgia;
   &_primary {
     background-color: $color-primary;
     &:hover {
