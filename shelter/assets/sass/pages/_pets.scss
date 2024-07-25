@@ -23,5 +23,8 @@
   }
   & .header-nav_link {
     color: $color-dark-l;
+    &__inactive {
+      color: $color-dark-3xl;
+    }
   }
 }

@@ -12,6 +12,7 @@
     position: relative;
     &__inactive {
       cursor: default;
+      color: $color-light-s;
       &::after {
         @include underlink;
       }

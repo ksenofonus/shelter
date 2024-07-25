@@ -753,6 +753,7 @@ p {
 }
 .header-nav_link__inactive {
   cursor: default;
+  color: #fafafa;
 }
 .header-nav_link__inactive::after {
   position: absolute;
@@ -1023,4 +1024,7 @@ p {
 }
 .header-container-pets .header-nav_link {
   color: #545454;
+}
+.header-container-pets .header-nav_link__inactive {
+  color: #292929;
 }/*# sourceMappingURL=index.css.map */
