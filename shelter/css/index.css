@@ -664,8 +664,8 @@ p {
   border-color: #cdcdcd;
   cursor: default;
 }
-.button__circle-inactive > h4 {
-  color: #cdcdcd;
+.button__circle-active {
+  background-color: #f1cdb3;
 }
 .button__circle:not(.button__circle-inactive):hover {
   background-color: #fddcc4;

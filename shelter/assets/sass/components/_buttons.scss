@@ -35,9 +35,9 @@
     &-inactive {
       border-color: $color-dark-s;
       cursor: default;
-      & > h4 {
-        color: $color-dark-s;
-      }
+    }
+    &-active {
+      background-color: $color-primary;
     }
     &:not(.button__circle-inactive):hover {
       background-color: $color-primary-light;
