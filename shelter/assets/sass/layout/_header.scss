@@ -10,6 +10,7 @@
     text-decoration: none;
     display: block;
     position: relative;
+    transition: all .5s ease-out;
     &__inactive {
       cursor: default;
       color: $color-light-s;
@@ -17,13 +18,14 @@
         @include underlink;
       }
     }
-    &:not(.header-nav_link__inactive)::after {
-      @include underlink;
-      width: 0;
-      transition: all .5s ease-out;
+    &:active {
+      color: $color-light-s;
+      &::after {
+        @include underlink;
+      }
     }
-    &:hover::after {
-      width: 101%;
+    &:hover {
+      color: $color-light-s;
     }
     
   }
