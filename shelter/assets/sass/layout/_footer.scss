@@ -8,6 +8,18 @@
   display: flex;
   justify-content: space-between;
 }
+.contact-wrapper {
+  
+  &:hover > .contacts_item {
+    color: $color-primary-light;
+    scale: 1.01;
+  }
+  &:hover > svg {
+    fill: $color-primary-light;
+    scale: 1.05;
+    transition: all 1s ease;
+  }
+}
 .contacts {
   // max-width: 300px;
   max-height: 251px;
@@ -21,6 +33,7 @@
     font-size: 20px;
     font-family: $georgia;
     letter-spacing: 0.06em;
+    transition: all 1s ease;
   }
 }
 .address {

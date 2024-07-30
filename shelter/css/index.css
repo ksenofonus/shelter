@@ -666,8 +666,9 @@ p {
 }
 .button__circle-active {
   background-color: #f1cdb3;
+  cursor: default;
 }
-.button__circle:not(.button__circle-inactive):hover {
+.button__circle:not(.button__circle-inactive, .button__circle-active):hover {
   background-color: #fddcc4;
   border-color: #fddcc4;
   transition: all ease 0.5s;
@@ -799,6 +800,16 @@ p {
   justify-content: space-between;
 }
 
+.contact-wrapper:hover > .contacts_item {
+  color: #fddcc4;
+  scale: 1.01;
+}
+.contact-wrapper:hover > svg {
+  fill: #fddcc4;
+  scale: 1.05;
+  transition: all 1s ease;
+}
+
 .contacts {
   max-height: 251px;
   display: flex;
@@ -813,6 +824,7 @@ p {
   font-size: 20px;
   font-family: "Georgia", "Arial", sans-serif;
   letter-spacing: 0.06em;
+  transition: all 1s ease;
 }
 
 .address {

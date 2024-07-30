@@ -38,8 +38,9 @@
     }
     &-active {
       background-color: $color-primary;
+      cursor: default;
     }
-    &:not(.button__circle-inactive):hover {
+    &:not(.button__circle-inactive, .button__circle-active):hover {
       background-color: $color-primary-light;
       border-color: $color-primary-light;
       transition: all ease .5s;
