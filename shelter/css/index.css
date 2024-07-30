@@ -666,8 +666,9 @@ p {
 }
 .button__circle-active {
   background-color: #f1cdb3;
+  cursor: default;
 }
-.button__circle:not(.button__circle-inactive):hover {
+.button__circle:not(.button__circle-inactive, .button__circle-active):hover {
   background-color: #fddcc4;
   border-color: #fddcc4;
   transition: all ease 0.5s;
@@ -750,6 +751,7 @@ p {
   text-decoration: none;
   display: block;
   position: relative;
+  transition: all 0.5s ease-out;
 }
 .header-nav_link__inactive {
   cursor: default;
@@ -765,7 +767,10 @@ p {
   bottom: -7px;
   left: 1px;
 }
-.header-nav_link:not(.header-nav_link__inactive)::after {
+.header-nav_link:active {
+  color: #fafafa;
+}
+.header-nav_link:active::after {
   position: absolute;
   content: "";
   display: block;
@@ -774,11 +779,9 @@ p {
   background-color: #f1cdb3;
   bottom: -7px;
   left: 1px;
-  width: 0;
-  transition: all 0.5s ease-out;
 }
-.header-nav_link:hover::after {
-  width: 101%;
+.header-nav_link:hover {
+  color: #fafafa;
 }
 .header-nav_list {
   display: flex;
@@ -797,6 +800,16 @@ p {
   justify-content: space-between;
 }
 
+.contact-wrapper:hover > .contacts_item {
+  color: #fddcc4;
+  scale: 1.01;
+}
+.contact-wrapper:hover > svg {
+  fill: #fddcc4;
+  scale: 1.05;
+  transition: all 1s ease;
+}
+
 .contacts {
   max-height: 251px;
   display: flex;
@@ -811,6 +824,7 @@ p {
   font-size: 20px;
   font-family: "Georgia", "Arial", sans-serif;
   letter-spacing: 0.06em;
+  transition: all 1s ease;
 }
 
 .address {
