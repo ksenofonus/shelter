@@ -1,17 +1,21 @@
 .slider {
   display: flex;
   justify-content: space-between;
-  padding: 0 53px;
-  width: 100%;
+  gap: 40px;
+  width: 990px;
   overflow: hidden;
   &-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    gap: 12px;
   }
   &-container {
     margin-bottom: 60px;
+  }
+  @media screen and (max-width: 1130px) {
+    width: 580px;
   }
 }
 

@@ -18,15 +18,16 @@
 }
 .start {
   display: flex;
-  min-height: 728px;
   margin-top: 59px;
   justify-content: space-between;
   &_content {
     max-width: 460px;
-    margin-top: 164px;
+    align-self: center;
     @include flexcolumn;
     align-items: flex-start;
     gap: 41px;
+    flex-shrink: 0;
+    margin-bottom: 84px;
   }
   &_title {
     color: $white;
@@ -37,8 +38,27 @@
     margin-bottom: 1px;
   }
   &_img {
-    width: 698px;
+    max-width: 698px;
     max-height: 728px;
+    min-width: 569px;
+    min-height: 593px;
+    align-self: flex-end;
+    & > img {
+      width: 100%;
+      height: 100%;
+      vertical-align: bottom;
+    }
+    @media screen and (max-width: 1130px) {
+      max-width: 569px;
+      max-height: 593px;
+      min-width: 260px;
+    }
+  }
+  @media screen and (max-width: 1130px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    align-items: flex-end;
   }
 }
 .about {
@@ -52,6 +72,12 @@
   }
   & .section_content {
     max-width: 430px;
+    flex-shrink: 0;
+  }
+  @media screen and (max-width: 1130px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px;
   }
 }
 .pets-section {

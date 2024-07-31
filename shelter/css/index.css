@@ -682,8 +682,8 @@ p {
 .slider {
   display: flex;
   justify-content: space-between;
-  padding: 0 53px;
-  width: 100%;
+  gap: 40px;
+  width: 990px;
   overflow: hidden;
 }
 .slider-container {
@@ -691,9 +691,15 @@ p {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  gap: 12px;
 }
 .slider-container {
   margin-bottom: 60px;
+}
+@media screen and (max-width: 1130px) {
+  .slider {
+    width: 580px;
+  }
 }
 
 .pets {
@@ -913,17 +919,18 @@ p {
 
 .start {
   display: flex;
-  min-height: 728px;
   margin-top: 59px;
   justify-content: space-between;
 }
 .start_content {
   max-width: 460px;
-  margin-top: 164px;
+  align-self: center;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 41px;
+  flex-shrink: 0;
+  margin-bottom: 84px;
 }
 .start_title {
   color: #fff;
@@ -934,8 +941,31 @@ p {
   margin-bottom: 1px;
 }
 .start_img {
-  width: 698px;
+  max-width: 698px;
   max-height: 728px;
+  min-width: 569px;
+  min-height: 593px;
+  align-self: flex-end;
+}
+.start_img > img {
+  width: 100%;
+  height: 100%;
+  vertical-align: bottom;
+}
+@media screen and (max-width: 1130px) {
+  .start_img {
+    max-width: 569px;
+    max-height: 593px;
+    min-width: 260px;
+  }
+}
+@media screen and (max-width: 1130px) {
+  .start {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    align-items: flex-end;
+  }
 }
 
 .about {
@@ -950,6 +980,14 @@ p {
 }
 .about .section_content {
   max-width: 430px;
+  flex-shrink: 0;
+}
+@media screen and (max-width: 1130px) {
+  .about {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px;
+  }
 }
 
 .pets-section {
