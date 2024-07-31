@@ -27,7 +27,7 @@
     align-items: flex-start;
     gap: 41px;
     flex-shrink: 0;
-    margin-bottom: 84px;
+    margin-bottom: 80px;
   }
   &_title {
     color: $white;
@@ -85,7 +85,7 @@
   align-items: center;
 }
 .help {
-  padding-top: 83px;
+  padding-top: 82px;
 }
 
 .donation {
@@ -101,6 +101,10 @@
     max-width: 380px;
     gap: 20px;
     margin-top: 0;
+  }
+  @media screen and (max-width: 1000px) {
+    flex-direction: column-reverse;
+    align-items: center;
   }
 }
 .card-number {

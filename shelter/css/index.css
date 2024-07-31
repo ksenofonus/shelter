@@ -539,7 +539,7 @@ input {
 .section-title {
   max-width: 400px;
   margin: 0 auto;
-  padding-bottom: 59px;
+  margin-bottom: 60px;
   text-align: center;
 }
 
@@ -806,6 +806,13 @@ p {
 .contacts-container {
   display: flex;
   justify-content: space-between;
+  gap: 60px;
+}
+@media screen and (max-width: 1030px) {
+  .contacts-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 .contact-wrapper:hover > .contacts_item {
@@ -822,9 +829,8 @@ p {
   max-height: 251px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 40px;
   padding-top: 17px;
-  margin-right: 3px;
 }
 .contacts_item {
   text-decoration: none;
@@ -837,6 +843,7 @@ p {
 
 .address {
   margin-left: -5px;
+  gap: 33px;
 }
 .address svg {
   width: 22px;
@@ -881,9 +888,7 @@ p {
   align-items: center;
   justify-content: center;
   gap: 30px;
-  width: 20%;
   height: 100%;
-  flex: 1 1 auto;
 }
 .help_item-title {
   font-family: "Georgia", "Arial", sans-serif;
@@ -891,11 +896,35 @@ p {
   line-height: 23px;
   letter-spacing: 0.06em;
 }
+@media screen and (max-width: 500px) {
+  .help_item-title {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 780px) {
+  .help_item {
+    width: 170px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .help_item {
+    width: 130px;
+  }
+}
 .help_list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   row-gap: 55px;
+  -moz-column-gap: 10%;
+       column-gap: 10%;
+}
+@media screen and (max-width: 780px) {
+  .help_list {
+    justify-content: space-between;
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+  }
 }
 
 .header-container {
@@ -932,7 +961,7 @@ p {
   align-items: flex-start;
   gap: 41px;
   flex-shrink: 0;
-  margin-bottom: 84px;
+  margin-bottom: 80px;
 }
 .start_title {
   color: #fff;
@@ -999,7 +1028,7 @@ p {
 }
 
 .help {
-  padding-top: 83px;
+  padding-top: 82px;
 }
 
 .donation {
@@ -1016,6 +1045,12 @@ p {
   max-width: 380px;
   gap: 20px;
   margin-top: 0;
+}
+@media screen and (max-width: 1000px) {
+  .donation {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 }
 
 .card-number {

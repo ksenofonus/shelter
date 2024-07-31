@@ -12,23 +12,33 @@
     align-items: center;
     justify-content: center;
     gap: 30px;
-    width: 20%;
     height: 100%;
-    flex: 1 1 auto;
-    
+    // padding: 0 60px;
     &-title {
       font-family: $georgia;
       font-size: 20px;
       line-height: 23px;
       letter-spacing: 0.06em;
+      @media screen and (max-width: 500px) {
+        font-size: 15px;
+      }
     }
-    
+    @media screen and (max-width: 780px) {
+      width: 170px;
+    }
+    @media screen and (max-width: 500px) {
+      width: 130px;
+    }
   }
   &_list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     row-gap: 55px;
-    // column-gap: 119px;
+    column-gap: 10%;
+    @media screen and (max-width: 780px) {
+      justify-content: space-between;
+      column-gap: 10px;
+    }
   }
 }

@@ -7,9 +7,13 @@
 .contacts-container {
   display: flex;
   justify-content: space-between;
+  gap: 60px;
+  @media screen and (max-width: 1030px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 .contact-wrapper {
-  
   &:hover > .contacts_item {
     color: $color-primary-light;
     scale: 1.01;
@@ -21,12 +25,10 @@
   }
 }
 .contacts {
-  // max-width: 300px;
   max-height: 251px;
   @include flexcolumn;
-  justify-content: space-between;
+  gap: 40px;
   padding-top: 17px;
-  margin-right: 3px;
   &_item {
     text-decoration: none;
     color: $color-primary;
@@ -38,6 +40,7 @@
 }
 .address {
   margin-left: -5px;
+  gap: 33px;
   & svg {
   width: 22px;
 }
@@ -47,6 +50,7 @@
 }
 .footer-img {
   max-height: 310px;
+  
 }
 .contact-wrapper {
   display: flex;
