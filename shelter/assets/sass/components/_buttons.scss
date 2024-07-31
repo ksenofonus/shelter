@@ -6,6 +6,7 @@
   border: 2px solid $color-primary;
   color: $color-dark-3xl;
   font-family: $georgia;
+  transition: all 0.5s ease;
   &_primary {
     background-color: $color-primary;
     &:hover {
