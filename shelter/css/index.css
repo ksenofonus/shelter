@@ -915,9 +915,7 @@ p {
   display: flex;
   min-height: 728px;
   margin-top: 59px;
-  background-image: url("../assets/img/start-screen-puppy.png");
-  background-repeat: no-repeat;
-  background-position: 100%;
+  justify-content: space-between;
 }
 .start_content {
   max-width: 460px;
@@ -934,6 +932,10 @@ p {
 .start_text {
   color: #cdcdcd;
   margin-bottom: 1px;
+}
+.start_img {
+  width: 698px;
+  max-height: 728px;
 }
 
 .about {
