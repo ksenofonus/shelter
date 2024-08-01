@@ -3,6 +3,9 @@
  display: flex;
  align-items: center;
  padding: 30px 0;
+ @media screen and (max-width: 380px) {
+  padding: 31px 10px 29px;
+ }
 }
 .header-nav {
   &_link {
