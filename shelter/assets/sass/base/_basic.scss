@@ -38,6 +38,9 @@ input {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 40px;
+  @media screen and (max-width: 1130px) {
+    padding: 0 30px;
+  }
 }
 .section-title {
   max-width: 400px;
@@ -46,7 +49,6 @@ input {
   text-align: center;
 }
 .section_content {
-  margin-top: 15px;
   @include flexcolumn;
   gap: 25px;
 }

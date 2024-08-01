@@ -57,14 +57,22 @@
   @media screen and (max-width: 1130px) {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 16px;
+    gap: 20px;
     align-items: flex-end;
+    margin-top: 30px;
+    .button {
+      align-self: center;
+    }
+    .start_img {
+      margin-left: auto;
+    }
   }
 }
 .about {
   max-width: 850px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 120px;
   &_img {
     width: auto;
@@ -75,7 +83,7 @@
     flex-shrink: 0;
   }
   @media screen and (max-width: 1130px) {
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
     justify-content: center;
     gap: 80px;
   }
