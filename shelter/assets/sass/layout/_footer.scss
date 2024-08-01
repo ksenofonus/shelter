@@ -1,16 +1,24 @@
+.footer {
+  @include flexcolumn;
+  min-height: 350px;
+  justify-content: flex-end;
+  padding-top: 30px;
+}
 .footer-container {
   background: url("../assets/img/noise_transparent@2x.png"),
               radial-gradient(100% 500% at 0% 0%, #513d2f 0%, #1a1a1c 100%);
   background-color: $screen-gradient-background;
-  padding-top: 41px;
 }
 .contacts-container {
   display: flex;
   justify-content: space-between;
-  gap: 60px;
+  align-items: flex-end;
+  column-gap: 60px;
   @media screen and (max-width: 1030px) {
     flex-wrap: wrap;
     justify-content: center;
+    padding: 0 34px;
+    justify-content: flex-start;
   }
 }
 .contact-wrapper {
@@ -27,8 +35,8 @@
 .contacts {
   max-height: 251px;
   @include flexcolumn;
-  gap: 40px;
-  padding-top: 17px;
+  gap: 39px;
+  margin-bottom: 59px;
   &_item {
     text-decoration: none;
     color: $color-primary;
@@ -37,20 +45,34 @@
     letter-spacing: 0.06em;
     transition: all 1s ease;
   }
+  @media screen and (max-width: 1030px) {
+    margin-bottom: 65px;
+  }
+
 }
 .address {
-  margin-left: -5px;
+  margin-left: -6px;
   gap: 33px;
-  & svg {
-  width: 22px;
-}
+  & .contacts_icon {
+    width: 22px;
+  }
+  @media screen and (max-width: 1030px) {
+    margin-left: 0;
+  }
 }
 .footer_title {
   color: $white;
 }
 .footer-img {
-  max-height: 310px;
-  
+  height: 310px;
+  width: 300px;
+  & > img {
+    width: 100%;
+    height: 100%;
+  }
+  @media screen and (max-width: 1030px) {
+    margin: 0 auto;
+  }
 }
 .contact-wrapper {
   display: flex;
@@ -59,7 +81,11 @@
 }
 .contacts_icon {
   width: 40px;
-  height: 32px;
+  height: 33px;
+  & svg {
+    width: 100%;
+    height: 100%;
+  }
 }
 .footer {
   flex-shrink: 0;

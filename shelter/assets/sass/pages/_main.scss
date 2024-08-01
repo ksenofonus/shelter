@@ -101,9 +101,14 @@
   margin: 0 auto;
   gap: 30px;
   justify-content: center;
+  align-items: center;
   &_img {
     height: 261px;
-    margin-top: 11px;
+    width: 505px;
+    & > img {
+      width: 100%;
+      height: 100%;
+    }
   }
   & > .section_content {
     max-width: 380px;
@@ -113,6 +118,7 @@
   @media screen and (max-width: 1000px) {
     flex-direction: column-reverse;
     align-items: center;
+    gap: 60px;
   }
 }
 .card-number {

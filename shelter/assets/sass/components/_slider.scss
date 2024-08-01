@@ -13,10 +13,14 @@
   }
   &-container {
     margin-bottom: 61px;
+    & .arrow {
+      margin-top: 3px;
+    }
   }
   @media screen and (max-width: 1130px) {
     width: 580px;
   }
+  
 }
 
 
