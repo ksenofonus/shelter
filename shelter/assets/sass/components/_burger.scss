@@ -1,0 +1,16 @@
+.burger {
+  @include flexcolumn;
+  height: 22px;
+  justify-content: space-between;
+  transition: all .5s ease-in-out;
+  display: none;
+  &_line {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: $color-primary-light;
+  }
+  @media screen and (max-width: 740px) {
+    display: flex;
+  }
+}

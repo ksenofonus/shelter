@@ -26,8 +26,11 @@
     @include flexcolumn;
     align-items: flex-start;
     gap: 41px;
-    flex-shrink: 0;
     margin-bottom: 80px;
+    @media screen and (max-width: 500px) {
+      text-align: center;
+      align-items: center;
+    }
   }
   &_title {
     color: $white;
@@ -52,6 +55,7 @@
       max-width: 569px;
       max-height: 593px;
       min-width: 260px;
+      min-height: auto;
     }
   }
   @media screen and (max-width: 1130px) {
@@ -75,16 +79,23 @@
   align-items: center;
   gap: 120px;
   &_img {
-    width: auto;
-    height: 408px;
+    max-width: 300px;
+    max-height: 408px;
+    & > img {
+      width: 100%;
+      height: auto;
+    }
   }
   & .section_content {
     max-width: 430px;
-    flex-shrink: 0;
   }
   @media screen and (max-width: 1130px) {
     flex-wrap: wrap-reverse;
     justify-content: center;
+    gap: 80px;
+  }
+  @media screen and (max-width: 500px) {
+    text-align: center;
     gap: 80px;
   }
 }
@@ -103,22 +114,40 @@
   justify-content: center;
   align-items: center;
   &_img {
-    height: 261px;
-    width: 505px;
+    max-height: 261px;
+    max-width: 505px;
     & > img {
       width: 100%;
       height: 100%;
+    }
+    @media screen and (max-width: 380px) {
+      max-width: 260px;
     }
   }
   & > .section_content {
     max-width: 380px;
     gap: 20px;
     margin-top: 0;
+    @media screen and (max-width: 380px) {
+      gap: 23px;
+    }
   }
   @media screen and (max-width: 1000px) {
     flex-direction: column-reverse;
     align-items: center;
     gap: 60px;
+    
+  }
+  @media screen and (max-width: 380px) {
+    gap: 42px;
+    .section_text {
+      text-align: justify;
+      margin: 0 10px;
+      
+    }
+    .notes {
+      margin-top: -2px;
+    }
   }
 }
 .card-number {
@@ -136,11 +165,17 @@
   &::before {
     position: absolute;
     left: 15px;
-    bottom: 10px;
+    bottom: 50%;
+    translate: 0 50%;
     content: "";
     display: block;
     background-image: url('../assets/img/icons/credit-card.svg');
     width: 30px;
     height: 23px;
+  }
+  @media screen and (max-width:420px) {
+    font-size: 15px;
+    padding-top: 12px;
+    padding-bottom: 13px;
   }
 }

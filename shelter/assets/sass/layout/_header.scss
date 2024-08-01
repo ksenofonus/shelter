@@ -27,11 +27,13 @@
     &:hover {
       color: $color-light-s;
     }
-    
   }
   &_list {
     display: flex;
     gap: 36px;
     margin-bottom: 6px;
+  }
+  @media screen and (max-width: 740px) {
+    display: none;
   }
 }

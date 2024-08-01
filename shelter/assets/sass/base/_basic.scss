@@ -41,14 +41,27 @@ input {
   @media screen and (max-width: 1130px) {
     padding: 0 30px;
   }
+  @media screen and (max-width: 530px) {
+    padding: 0 20px;
+  }
+  @media screen and (max-width:380px) {
+    padding: 0 10px;
+  }
 }
 .section-title {
   max-width: 400px;
   margin: 0 auto;
   margin-bottom: 59px;
   text-align: center;
+  @media screen and (max-width:500px) {
+    margin-bottom: 40px;
+  }
 }
 .section_content {
   @include flexcolumn;
   gap: 25px;
+  @media screen and (max-width: 500px) {
+    align-items: center;
+    text-align: center;
+  }
 }

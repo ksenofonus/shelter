@@ -10,15 +10,19 @@
     justify-content: space-between;
     width: 100%;
     gap: 12px;
-  }
-  &-container {
     margin-bottom: 61px;
     & .arrow {
       margin-top: 3px;
     }
+    @media screen and (max-width: 800px) {
+      justify-content: center;
+    }
   }
   @media screen and (max-width: 1130px) {
     width: 580px;
+  }
+  @media screen and (max-width: 800px) {
+    width: 270px;
   }
   
 }
