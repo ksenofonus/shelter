@@ -16,6 +16,19 @@
     }
     @media screen and (max-width: 800px) {
       justify-content: center;
+      flex-wrap: wrap;
+      column-gap: 80px;
+      row-gap: 21px;
+      margin-bottom: 42px;
+      .arrow {
+        margin-top: 0;
+      }
+      .arrow__left {
+        order: 2;
+      }
+      .arrow__right {
+        order: 3;
+      }
     }
   }
   @media screen and (max-width: 1130px) {

@@ -1,7 +1,6 @@
 .burger {
   @include flexcolumn;
   height: 22px;
-  justify-content: space-between;
   transition: all .5s ease-in-out;
   display: none;
   &_line {
@@ -9,6 +8,9 @@
     width: 30px;
     height: 2px;
     background-color: $color-primary-light;
+    &:not(:last-child) {
+      margin-bottom: 7px;
+    }
   }
   @media screen and (max-width: 740px) {
     display: flex;
