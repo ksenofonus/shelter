@@ -554,7 +554,7 @@ input {
 .section-title {
   max-width: 400px;
   margin: 0 auto;
-  margin-bottom: 59px;
+  margin-bottom: 60px;
   text-align: center;
 }
 @media screen and (max-width: 500px) {
@@ -733,7 +733,7 @@ p {
   justify-content: space-between;
   width: 100%;
   gap: 12px;
-  margin-bottom: 61px;
+  margin-bottom: 60px;
 }
 .slider-container .arrow {
   margin-top: 3px;
@@ -748,7 +748,7 @@ p {
     width: 580px;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 500px) {
   .slider {
     width: 270px;
   }
@@ -909,7 +909,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-self: center;
-  width: 733px;
+  width: 739px;
   min-height: 239px;
   margin-right: auto;
 }
@@ -917,7 +917,7 @@ p {
   .contacts-container {
     justify-content: center;
     gap: 38px;
-    width: 700px;
+    width: 710px;
   }
 }
 @media screen and (max-width: 700px) {
@@ -929,6 +929,11 @@ p {
   }
 }
 
+.contact-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
 .contact-wrapper:hover > .contacts_item {
   color: #fddcc4;
   scale: 1.01;
@@ -965,13 +970,13 @@ p {
 }
 
 .address {
-  gap: 33px;
+  gap: 34px;
 }
 .address .contacts_icon {
   width: 22px;
 }
 .address .contact-wrapper {
-  gap: 32px;
+  gap: 33px;
 }
 @media screen and (max-width: 700px) {
   .address {
@@ -1011,12 +1016,6 @@ p {
   }
 }
 
-.contact-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
 .contacts_icon {
   width: 40px;
   height: 32px;
@@ -1036,9 +1035,6 @@ p {
   gap: 20px;
 }
 
-.help {
-  padding-top: 83px;
-}
 .help_icon {
   max-width: 60px;
   max-height: 60px;
@@ -1258,10 +1254,6 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.help {
-  padding-top: 82px;
 }
 
 .donation {

@@ -23,13 +23,13 @@
   display: flex;
   justify-content: space-between;
   align-self: center;
-  width: 733px;
+  width: 739px;
   min-height: 239px;
   margin-right: auto;
   @media screen and (max-width: 1030px) {
     justify-content: center;
     gap: 38px;
-    width: 700px;
+    width: 710px;
   }
   @media screen and (max-width: 700px) {
     flex-wrap: wrap;
@@ -39,6 +39,8 @@
   }
 }
 .contact-wrapper {
+  @include flexcolumn;
+  gap: 40px;
   &:hover > .contacts_item {
     color: $color-primary-light;
     scale: 1.01;
@@ -73,12 +75,12 @@
 }
 .address {
   // margin-left: -6px;
-  gap: 33px;
+  gap: 34px;
   & .contacts_icon {
     width: 22px;
   }
   & .contact-wrapper {
-    gap: 32px;
+    gap: 33px;
   }
   @media screen and (max-width: 700px) {
     gap: 38px;
@@ -111,11 +113,7 @@
     height: 269px;
   }
 }
-.contact-wrapper {
-  @include flexcolumn;
-  gap: 40px;
-  
-}
+
 .contacts_icon {
   width: 40px;
   height: 32px;
