@@ -3,8 +3,10 @@
  display: flex;
  align-items: center;
  padding: 30px 0;
+ position: relative;
  @media screen and (max-width: 380px) {
   padding: 30px 10px 29px;
+  margin-right: 10px;
  }
 }
 .header-nav {
@@ -36,7 +38,9 @@
     gap: 36px;
     margin-bottom: 6px;
   }
-  @media screen and (max-width: 740px) {
-    display: none;
+  @media screen and (max-width: 767px) {
+    visibility: hidden;
+    scale: 0;
+    position: absolute;
   }
 }

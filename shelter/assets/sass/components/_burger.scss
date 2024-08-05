@@ -3,16 +3,20 @@
   height: 22px;
   transition: all .5s ease-in-out;
   display: none;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  translate: 0 -50%;
   &_line {
     display: block;
     width: 30px;
     height: 2px;
     background-color: $color-primary-light;
     &:not(:last-child) {
-      margin-bottom: 7px;
+      margin-bottom: 8px;
     }
   }
-  @media screen and (max-width: 740px) {
+  @media screen and (max-width: 767px) {
     display: flex;
   }
 }
