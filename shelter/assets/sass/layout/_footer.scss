@@ -41,15 +41,6 @@
 .contact-wrapper {
   @include flexcolumn;
   gap: 40px;
-  &:hover > .contacts_item {
-    color: $color-primary-light;
-    scale: 1.01;
-  }
-  &:hover > svg {
-    fill: $color-primary-light;
-    scale: 1.05;
-    transition: all 1s ease;
-  }
   @media screen and (max-width: 380px) {
     align-items: center;
     
@@ -67,7 +58,10 @@
     font-family: $georgia;
     letter-spacing: 0.06em;
     transition: all 1s ease;
-    
+    &:hover {
+      color: $color-primary-light;
+      scale: 1.01;
+    }
   }
   @media screen and (max-width: 700px) {
     align-items: center;

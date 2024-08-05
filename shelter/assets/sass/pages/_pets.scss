@@ -1,13 +1,21 @@
 .pets_wrapper {
   @include flexcolumn;
-  gap: 61px;
+  gap: 60px;
+  @media screen and (max-width: 970px) {
+    gap: 38px;
+  }
 }
 .pets_menu {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   width: 100%;
-  justify-content: space-between;
   row-gap: 30px;
+  column-gap: 40px;
+  overflow: hidden;
+  @media screen and (max-width: 970px) {
+    max-height: calc(435px * 3 + 30px * 2);
+  }
 }
 .header-container-pets {
   background: $white;
@@ -25,6 +33,14 @@
     color: $color-dark-l;
     &__inactive {
       color: $color-dark-3xl;
+    }
+  }
+}
+.pets-section {
+  @media screen and (max-width: 970px) {
+    padding-bottom: 77px;
+    .section-title {
+      margin-bottom: 30px;
     }
   }
 }
