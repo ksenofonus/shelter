@@ -773,7 +773,7 @@ p {
   flex-direction: column;
   align-items: center;
   background-color: #fafafa;
-  max-width: 270px;
+  width: 270px;
   height: 435px;
   gap: 30px;
   border-radius: 9px;
@@ -802,9 +802,10 @@ p {
 
 .pets_pagination {
   display: flex;
-  margin: 0 auto;
   gap: 20px;
   color: #292929;
+  justify-content: space-between;
+  max-width: 340px;
 }
 .pets_pagination .button__circle {
   font-family: "Georgia", "Arial", sans-serif;
@@ -812,6 +813,11 @@ p {
   color: #545454;
   font-size: 20px;
   line-height: 115%;
+}
+@media screen and (max-width: 400px) {
+  .pets_pagination {
+    gap: 10px;
+  }
 }
 
 .burger {
@@ -1362,11 +1368,13 @@ p {
 .pets_wrapper {
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 59px;
+  width: 100%;
+  align-items: center;
 }
 @media screen and (max-width: 970px) {
   .pets_wrapper {
-    gap: 38px;
+    gap: 42px;
   }
 }
 
@@ -1409,9 +1417,9 @@ p {
 
 @media screen and (max-width: 970px) {
   .pets-section {
-    padding-bottom: 77px;
+    padding-bottom: 42px;
   }
   .pets-section .section-title {
-    margin-bottom: 30px;
+    margin-bottom: 42px;
   }
 }/*# sourceMappingURL=index.css.map */

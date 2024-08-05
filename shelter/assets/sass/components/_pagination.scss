@@ -1,11 +1,15 @@
 .pets_pagination {
   display: flex;
-  margin: 0 auto;
   gap: 20px;
   color: $color-dark-3xl;
+  justify-content: space-between;
+  max-width: 340px;
   & .button__circle {
     @include header;
     font-size: 20px;
     line-height: 115%;
+  }
+  @media screen and (max-width: 400px) {
+    gap: 10px;
   }
 }

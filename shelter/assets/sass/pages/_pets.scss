@@ -1,8 +1,10 @@
 .pets_wrapper {
   @include flexcolumn;
-  gap: 60px;
+  gap: 59px;
+  width: 100%;
+  align-items: center;
   @media screen and (max-width: 970px) {
-    gap: 38px;
+    gap: 42px;
   }
 }
 .pets_menu {
@@ -38,9 +40,9 @@
 }
 .pets-section {
   @media screen and (max-width: 970px) {
-    padding-bottom: 77px;
+    padding-bottom: 42px;
     .section-title {
-      margin-bottom: 30px;
+      margin-bottom: 42px;
     }
   }
 }
