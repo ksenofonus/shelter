@@ -38,15 +38,30 @@ input {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 40px;
+  @media screen and (max-width: 1130px) {
+    padding: 0 30px;
+  }
+  @media screen and (max-width: 530px) {
+    padding: 0 20px;
+  }
+  @media screen and (max-width:380px) {
+    padding: 0 10px;
+  }
 }
 .section-title {
   max-width: 400px;
   margin: 0 auto;
-  padding-bottom: 59px;
+  margin-bottom: 60px;
   text-align: center;
+  @media screen and (max-width:500px) {
+    margin-bottom: 42px;
+  }
 }
 .section_content {
-  margin-top: 15px;
   @include flexcolumn;
   gap: 25px;
+  @media screen and (max-width: 500px) {
+    align-items: center;
+    text-align: center;
+  }
 }

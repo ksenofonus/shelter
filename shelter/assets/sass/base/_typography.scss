@@ -2,12 +2,21 @@ h2 {
   @include header;
   font-size: 44px;
   line-height: 130%;
+  @media screen and (max-width: 500px) {
+    font-size: 25px;
+    line-height: 32px;
+    letter-spacing: 0.06em;
+  }
 }
 h3 {
   @include header;
   font-size: 35px;
-  line-height: 128%;
+  line-height: 45px;
   letter-spacing: 0.06em;
+  @media screen and (max-width: 500px) {
+    font-size: 25px;
+    line-height: 1.28;
+  }
 }
 h4 {
   @include header;
@@ -17,8 +26,10 @@ h4 {
 h5 {
   @include header;
   font-size: 15px;
-  line-height: 16px;
   letter-spacing: 0.06em;
+  @media screen and (max-width: 500px) {
+    letter-spacing: 0;
+  }
 }
 p {
   @include parag;
