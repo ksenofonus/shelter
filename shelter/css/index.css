@@ -1288,10 +1288,26 @@ p {
   }
 }
 
-.pets-section {
+#friends {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+@media screen and (max-width: 768px) {
+  #friends {
+    padding-bottom: 100px;
+  }
+  #friends .section-title {
+    margin-bottom: 60px;
+  }
+}
+@media screen and (max-width: 320px) {
+  #friends {
+    padding-bottom: 42px;
+  }
+  #friends .section-title {
+    margin-bottom: 42px;
+  }
 }
 
 .donation {
