@@ -1381,6 +1381,11 @@ p {
 }
 @media screen and (max-width: 970px) {
   .pets_wrapper {
+    gap: 38px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .pets_wrapper {
     gap: 42px;
   }
 }
@@ -1422,7 +1427,15 @@ p {
   color: #292929;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
+  .pets-section {
+    padding-bottom: 77px;
+  }
+  .pets-section .section-title {
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 320px) {
   .pets-section {
     padding-bottom: 42px;
   }
