@@ -21,6 +21,11 @@
             <a class="logo_title" href="javascript:void(0);">cozy house</a>
             <a class="logo_subtitle" href="javascript:void(0);"> Shelter for pets in Boston</a>
           </div>
+          <div class="burger">
+            <span class="burger_line"></span>
+            <span class="burger_line"></span>
+            <span class="burger_line"></span>
+          </div>
           <nav class="header-nav">
             <ul class="header-nav_list">
               <li class="header-nav_item"><a href="javascript:void(0);" class="header-nav_link header-nav_link__inactive">About the shelter</a></li>
@@ -32,15 +37,18 @@
         </div>
         <section class="start">
           <div class="start_content">
-            <h2 class="start_title">Not only people need a house</h2>
+            <h2 class="start_title">Not only people<br> need a house</h2>
             <p class="start_text">We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</p>
             <a href="#friends" class="button button_primary">Make a friend</a>
+          </div>
+          <div class="start_img">
+            <img src="assets/img/start-screen-puppy.png" alt="main-pets">
           </div>
         </section>
       </header>
     </div>
   </div>
-  <main>
+  <main class="main">
     <div class="container about-container">
       <div class="content-container">
         <section class="main-section" id="about">
@@ -59,7 +67,7 @@
     </div>
     <div class="container pets-container">
       <div class="content-container">
-        <section class="main-section pets-section" id="friends">
+        <section class="main-section pets-section friends" id="friends">
           <h3 class="section-title">Our friends who<br> are looking for a house</h3>
           <div class="slider-container">
             <button class="button__circle arrow arrow__left">
@@ -188,45 +196,51 @@
   </main>
   <div class="container footer-container">
     <div class="content-container">
-      <footer id="contacts">
+      <footer id="contacts" class="footer">
         <div class="contacts-container">
           <div class="contacts">
-            <h3 class="footer_title">For questions<br> and suggestions</h3>
+            <h3 class="footer_title">For questions and suggestions</h3>
             <div class="contact-wrapper">
-              <svg class="contacts_icon">
-                <use xlink:href="assets/img/icons/sprite-contacts.svg#icon-email"></use>
-              </svg>
-              <a class="contacts_item" href="mailto:email@shelter.com">email@shelter.com</a>
-            </div>
-            <div class="contact-wrapper">
-              <svg class="contacts_icon">
-                <use xlink:href="assets/img/icons/sprite-contacts.svg#icon-phone"></use>
-              </svg>
-              <a class="contacts_item" href="tel:+136745677554">+13 674 567 75 54</a>
+              <div class="contacts_item">
+                <div class="contacts_icon"><svg>
+                <use xlink:href="assets/img/icons/sprite-contacts.svg#icon-email" y="0"></use>
+                </svg></div>
+                <a class="contacts_item" href="mailto:email@shelter.com">email@shelter.com</a></div>
+              <div class="contacts_item">
+                <div class="contacts_icon"><svg>
+                  <use xlink:href="assets/img/icons/sprite-contacts.svg#icon-phone" y="0"></use>
+                </svg></div>
+                <a class="contacts_item" href="tel:+136745677554">+13 674 567 75 54</a>
+              </div>
+              
             </div>
           </div>
           <div class="contacts address">
-            <h3 class="footer_title">We are waiting<br> for your visit</h3>
+            <h3 class="footer_title">We are waiting for your visit</h3>
             <div class="contact-wrapper">
-              <svg class="contacts_icon">
-                <use xlink:href="assets/img/icons/sprite-contacts.svg#icon-marker"></use>
-              </svg>
-              <a class="contacts_item" href="https://www.google.com/maps/place/42%C2%B019'20.3%22N+71%C2%B006'35.0%22W/@42.322301,-71.1110175,18z/data=!3m1!4b1!4m13!1m8!3m7!1s0x89e37931320dbc11:0x1afedefc225456fa!2zQ2VudHJlIFN0LCBNYXNzYWNodXNldHRzLCDQodCo0JA!3b1!8m2!3d42.3220204!4d-71.1098548!16s%2Fg%2F1tlwb2hk!3m3!8m2!3d42.322299!4d-71.10973?entry=ttu" target="_blank">1 Central Street, Boston<br> (entrance from the store)</a>
-            </div>
-            <div class="contact-wrapper">
-              <svg class="contacts_icon">
-                <use xlink:href="assets/img/icons/sprite-contacts.svg#icon-marker"></use>
-              </svg>
-              <a class="contacts_item" href="https://www.google.com/maps/place/51%C2%B028'03.9%22N+0%C2%B011'45.4%22W/@51.4677572,-0.2008039,17z/data=!3m1!4b1!4m13!1m8!3m7!1s0x48760f7e93a08c91:0xcc61ecebfc90fe12!2zUyBQYXJrIE1ld3MsIExvbmRvbiwg0JLQtdC70LjQutC-0LHRgNC40YLQsNC90LjRjw!3b1!8m2!3d51.4689723!4d-0.1919!16s%2Fg%2F1tglygb_!3m3!8m2!3d51.467754!4d-0.195933?authuser=0&entry=ttu" target="_blank">18 South Park, London </a>
+              <div class="contacts_item">
+                <div class="contacts_icon">
+                <svg>
+                  <use xlink:href="assets/img/icons/sprite-contacts.svg#icon-marker" ></use>
+                </svg>
+              </div>
+              <a class="contacts_item" href="https://www.google.com/maps/place/42%C2%B019'20.3%22N+71%C2%B006'35.0%22W/@42.322301,-71.1110175,18z/data=!3m1!4b1!4m13!1m8!3m7!1s0x89e37931320dbc11:0x1afedefc225456fa!2zQ2VudHJlIFN0LCBNYXNzYWNodXNldHRzLCDQodCo0JA!3b1!8m2!3d42.3220204!4d-71.1098548!16s%2Fg%2F1tlwb2hk!3m3!8m2!3d42.322299!4d-71.10973?entry=ttu" target="_blank">1 Central Street, Boston<br> (entrance from the store)</a></div>
+              <div class="contacts_item">
+                <div class="contacts_icon"><svg class="contacts_icon">
+                  <use xlink:href="assets/img/icons/sprite-contacts.svg#icon-marker"></use>
+                </svg></div>
+                <a class="contacts_item" href="https://www.google.com/maps/place/51%C2%B028'03.9%22N+0%C2%B011'45.4%22W/@51.4677572,-0.2008039,17z/data=!3m1!4b1!4m13!1m8!3m7!1s0x48760f7e93a08c91:0xcc61ecebfc90fe12!2zUyBQYXJrIE1ld3MsIExvbmRvbiwg0JLQtdC70LjQutC-0LHRgNC40YLQsNC90LjRjw!3b1!8m2!3d51.4689723!4d-0.1919!16s%2Fg%2F1tglygb_!3m3!8m2!3d51.467754!4d-0.195933?authuser=0&entry=ttu" target="_blank">18 South Park, London </a>
+              </div>
             </div>
           </div>
-          <div class="footer-img">
-            <img src="assets/img/footer-puppy.png" alt="puppy">
-          </div>
+        </div>
+        <div class="footer-img">
+          <img src="assets/img/footer-puppy.png" alt="puppy">
         </div>
       </footer>
     </div>
   </div>
   <script src="index.js"></script>
+  <script src="main.js" type="module"></script>
 </body>
 </html>
