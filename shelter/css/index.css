@@ -723,7 +723,6 @@ p {
 .slider {
   display: flex;
   justify-content: space-between;
-  gap: 40px;
   width: 990px;
   overflow: hidden;
 }
@@ -738,7 +737,7 @@ p {
 .slider-container .arrow {
   margin-top: 3px;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 460px) {
   .slider-container {
     justify-content: center;
     flex-wrap: wrap;
@@ -760,9 +759,15 @@ p {
 @media screen and (max-width: 1130px) {
   .slider {
     width: 580px;
+    gap: 40px;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 800px) and (min-width: 769px) {
+  .slider {
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 767px) {
   .slider {
     width: 270px;
   }
@@ -1104,7 +1109,7 @@ p {
   .help_item {
     width: 130px;
     font-size: 15px;
-    gap: 18px;
+    gap: 16px;
   }
 }
 .help_list {
@@ -1125,7 +1130,7 @@ p {
   .help_list {
     -moz-column-gap: 30px;
          column-gap: 30px;
-    row-gap: 26px;
+    row-gap: 28px;
   }
 }
 
@@ -1415,7 +1420,7 @@ p {
   color: #292929;
 }
 
-@media screen and (max-width: 970px) {
+@media screen and (max-width: 700px) {
   .pets-section {
     padding-bottom: 42px;
   }
