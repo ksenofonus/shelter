@@ -1,2 +1,1 @@
-import { menuOpen } from '/assets/js/burger.js';
-menuOpen();
+import { menuToggle } from '/assets/js/burger.js';
