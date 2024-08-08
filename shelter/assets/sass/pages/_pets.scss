@@ -39,6 +39,9 @@
     &__inactive {
       color: $color-dark-3xl;
     }
+    &:hover {
+      color: $color-dark-3xl;
+    }
   }
 }
 .pets-section {
@@ -54,5 +57,10 @@
     .section-title {
       margin-bottom: 42px;
     }
+  }
+}
+@media screen and (max-width: 767px) {
+  .header-container-pets .header-nav__active {
+    background-color: #fff;
   }
 }

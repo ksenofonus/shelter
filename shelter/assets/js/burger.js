@@ -25,8 +25,7 @@ const menuToggle = () => {
     }
   })
   menuItem.forEach((item) => {
-    if (!item.classList.contains('header-nav_item__inactive'))
-      item.addEventListener('click', () => closeMenu())
+    item.addEventListener('click', () => closeMenu())
   })
 }
 menuToggle()

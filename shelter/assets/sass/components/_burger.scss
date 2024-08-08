@@ -2,7 +2,7 @@
   height: 22px;
   transition: all .5s ease-in-out;
   display: none;
-  position: relative;
+  position: absolute;
   right: 0;
   top: 50%;
   translate: 0 -50%;
@@ -24,7 +24,6 @@
   }
   &__active {
     rotate: 90deg;
-    
   }
   @media screen and (max-width: 767px) {
     display: block;
