@@ -1,5 +1,4 @@
 .burger {
-  @include flexcolumn;
   height: 22px;
   transition: all .5s ease-in-out;
   display: none;
@@ -7,6 +6,8 @@
   right: 0;
   top: 50%;
   translate: 0 -50%;
+  cursor: pointer;
+  z-index: 3;
   &_line {
     display: block;
     width: 30px;
@@ -15,14 +16,16 @@
     &:not(:last-child) {
       margin-bottom: 8px;
     }
-    
   }
   &__black {
     .burger_line {
       background-color: #000000;
     }
   }
+  &__active {
+    rotate: 90deg;
+  }
   @media screen and (max-width: 767px) {
-    display: flex;
+    display: block;
   }
 }

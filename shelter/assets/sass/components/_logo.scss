@@ -2,6 +2,7 @@
   @include flexcolumn;
   align-items: center;
   margin-right: auto;
+  flex-shrink: 0;
   &_title {
     padding-bottom: 10px;
     font-family: $georgia;

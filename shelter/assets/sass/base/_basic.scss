@@ -23,6 +23,9 @@ body {
   @include parag;
   font-size: 15px;
 }
+.body_no-scroll {
+  overflow: hidden;
+}
 button {
   border: none;
   font-family: $georgia;
@@ -38,6 +41,8 @@ input {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 40px;
+  // position: relative;
+  // overflow: hidden;
   @media screen and (max-width: 1130px) {
     padding: 0 30px;
   }
