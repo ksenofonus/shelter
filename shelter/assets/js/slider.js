@@ -1,25 +1,39 @@
-import { showCards } from '/assets/js/cards.js';
+import { getPetsData } from '/assets/js/pets.js';
+import { createCard } from '/assets/js/cards.js';
 const slider = document.querySelector('.slider');
+const petsList = await getPetsData();
+
+let startIndex = 0
 let cardsCount = 3;
-const petsListUrl = '../assets/pets.json';
-let petsList = [];
-const checkWidth = () => {
+
+const checkSliderWidth = () => {
   let windowWidth = window.innerWidth;
   if (windowWidth <= 1130 && windowWidth > 767) {
     cardsCount = 2;
   } else if (windowWidth <= 767) {
     cardsCount = 1;
   }
+  return cardsCount;
+}
+checkSliderWidth()
+
+const createList = () => {
+
 }
 
-
-async function getPetsData() {
-  const response = await fetch(petsListUrl);
-  const data = await response.json();
-  console.log(data[1].img);
-  checkWidth();
-  showCards(cardsCount, slider, data);
+const showSlider = (count, parent, petsList) => {
+  let cardsList = [];
+  for (let i=0; i < count; i++) {
+    cardsList.push(petsList[i]);
+  }
+  for (let i = 0; i < cardsList.length; i++) {
+    createCard(parent, cardsList, i);
+  }
 }
-getPetsData()
+
+showSlider(cardsCount, slider, petsList)
+
+
+
 
 
