@@ -6,3 +6,4 @@ export const createCard = (parent, petsList, i) => {
   parent.append(card);
 }
 
+

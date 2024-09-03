@@ -6,3 +6,21 @@
     translate: 100% 0%;
   }
 }
+
+@keyframes toLeft {
+  from {
+    translate: 0% 0%;
+  }
+  to {
+    translate: -100% 0%;
+  }
+}
+
+.slide-to-left {
+  animation-name: toLeft;
+  animation-duration: 5s;
+}
+.slide-to-right {
+  animation-name: toRight;
+  animation-duration: 5s;
+}

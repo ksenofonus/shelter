@@ -1,10 +1,12 @@
 import { getPetsData } from '/assets/js/pets.js';
 import { createCard } from '/assets/js/cards.js';
-import { getRandomStartOrder } from '/assets/js/getRandomOrder.js';
+import { getRandomStartOrder, getRandomNextOrder } from '/assets/js/getRandomOrder.js';
 const slider = document.querySelector('.slider');
 const petsList = await getPetsData();
+const nextArrow = document.querySelector('.arrow__right');
+const prevArrow = document.querySelector('.arrow__left');
 
-let startIndex = 0
+
 let cardsCount = 3;
 
 const checkSliderWidth = () => {
@@ -19,6 +21,8 @@ const checkSliderWidth = () => {
 checkSliderWidth()
 
 let visibleOrder = getRandomStartOrder(cardsCount);
+let prevOrder = [];
+let nextOrder = [];
 
 const createPetsList = (order) => {
   let petsOrder = [];
@@ -32,15 +36,36 @@ const createPetsList = (order) => {
 
 
 const showSlider = (parent) => {
+  let cardsWrapper = document.createElement('div');
+  cardsWrapper.className = 'cards-wrapper';
+  parent.append(cardsWrapper);
   let cardsList = createPetsList(visibleOrder);
   for (let i = 0; i < cardsList.length; i++) {
-    createCard(parent, cardsList, i);
+    createCard(cardsWrapper, cardsList, i);
+  }
+}
+const showNextSlider = (parent) => {
+  let cardsWrapper = document.createElement('div');
+  cardsWrapper.className = 'cards-wrapper card-wrapper__next slide-to-left';
+  parent.append(cardsWrapper);
+  let cardsList = createPetsList(visibleOrder);
+  for (let i = 0; i < cardsList.length; i++) {
+    createCard(cardsWrapper, cardsList, i);
   }
 }
 
 showSlider(slider)
 
-
-
+const cardsWrapper = document.querySelector('.cards-wrapper');
+nextArrow.addEventListener('click', () => {
+  cardsWrapper.classList.add('slide-to-left card-wrapper__prev');
+  cardsWrapper.addEventListener('animationend', () => {
+    cardsWrapper;
+  })
+  prevOrder = visibleOrder;
+  visibleOrder = getRandomNextOrder(cardsCount, visibleOrder);
+  showNextSlider(slider);
+  console.log('click');
+})
 
 
