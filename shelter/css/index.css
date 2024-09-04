@@ -731,14 +731,23 @@ p {
   max-height: 435px;
   width: 990px;
   overflow: hidden;
-  justify-content: center;
+  gap: 90px;
 }
 .slider .cards-wrapper {
   display: flex;
-  justify-content: space-between;
   gap: 90px;
   width: 990px;
   height: 100%;
+}
+@media screen and (max-width: 1225px) {
+  .slider .cards-wrapper {
+    gap: 60px;
+  }
+}
+@media screen and (max-width: 1170px) {
+  .slider .cards-wrapper {
+    gap: 40px;
+  }
 }
 @media screen and (max-width: 1130px) {
   .slider .cards-wrapper {
@@ -757,7 +766,7 @@ p {
   }
 }
 .slider .cards-wrapper__prev {
-  translate: -100% 0;
+  translate: 100% 0;
 }
 .slider-container {
   display: flex;
@@ -895,12 +904,29 @@ p {
   background-color: #000;
 }
 
+@-webkit-keyframes toRight {
+  from {
+    translate: 0% 0%;
+  }
+  to {
+    translate: calc(100% + 90px) 0%;
+  }
+}
+
 @keyframes toRight {
   from {
     translate: 0% 0%;
   }
   to {
-    translate: 100% 0%;
+    translate: calc(100% + 90px) 0%;
+  }
+}
+@-webkit-keyframes toLeft {
+  from {
+    translate: 0% 0%;
+  }
+  to {
+    translate: calc(-100% - 90px) 0%;
   }
 }
 @keyframes toLeft {
@@ -908,17 +934,21 @@ p {
     translate: 0% 0%;
   }
   to {
-    translate: -100% 0%;
+    translate: calc(-100% - 90px) 0%;
   }
 }
 .slide-to-left {
-  animation-name: toLeft;
-  animation-duration: 5s;
+  -webkit-animation-name: toLeft;
+          animation-name: toLeft;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
 }
 
 .slide-to-right {
-  animation-name: toRight;
-  animation-duration: 5s;
+  -webkit-animation-name: toRight;
+          animation-name: toRight;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
 }
 
 .header-top {

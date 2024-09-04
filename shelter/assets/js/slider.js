@@ -35,7 +35,7 @@ const createPetsList = (order) => {
 
 
 
-const showSlider = (parent) => {
+const createSlider = (parent) => {
   let cardsWrapper = document.createElement('div');
   cardsWrapper.className = 'cards-wrapper';
   parent.append(cardsWrapper);
@@ -54,17 +54,21 @@ const showNextSlider = (parent) => {
   }
 }
 
-showSlider(slider)
+createSlider(slider)
 
-const cardsWrapper = document.querySelector('.cards-wrapper');
+
 nextArrow.addEventListener('click', () => {
-  cardsWrapper.classList.add('slide-to-left card-wrapper__prev');
+  createSlider(slider);
+  const cardsWrapper = document.querySelectorAll('.cards-wrapper');
+  cardsWrapper.forEach((item) => item.classList.add('slide-to-left'));
   cardsWrapper.addEventListener('animationend', () => {
-    cardsWrapper;
+    cardsWrapper.forEach((item) => item.classList.remove('slide-to-left'));
+    cardsWrapper[0].classList.add('cards-wrapper__prev');
   })
   prevOrder = visibleOrder;
   visibleOrder = getRandomNextOrder(cardsCount, visibleOrder);
-  showNextSlider(slider);
+  
+  cardsWrapper
   console.log('click');
 })
 
