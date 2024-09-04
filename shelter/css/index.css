@@ -766,7 +766,7 @@ p {
   }
 }
 .slider .cards-wrapper__prev {
-  translate: 100% 0;
+  translate: calc(-100% - 90px) 0;
 }
 .slider-container {
   display: flex;

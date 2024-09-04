@@ -27,7 +27,7 @@
       width: 270px;
     }
     &__prev {
-      translate: 100% 0;
+      translate: calc(-100% - 90px) 0;
     }
   }
   &-container {

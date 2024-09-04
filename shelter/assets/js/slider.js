@@ -58,18 +58,19 @@ createSlider(slider)
 
 
 nextArrow.addEventListener('click', () => {
+  visibleOrder = getRandomNextOrder(cardsCount, visibleOrder);
   createSlider(slider);
   const cardsWrapper = document.querySelectorAll('.cards-wrapper');
   cardsWrapper.forEach((item) => item.classList.add('slide-to-left'));
-  cardsWrapper.addEventListener('animationend', () => {
-    cardsWrapper.forEach((item) => item.classList.remove('slide-to-left'));
-    cardsWrapper[0].classList.add('cards-wrapper__prev');
+  cardsWrapper.forEach((item) => {
+    item.addEventListener('animationend', () => {
+      cardsWrapper.forEach((item) => { 
+        item.classList.remove('slide-to-left'); item.classList.add('cards-wrapper__prev')
+      })
+    })
   })
   prevOrder = visibleOrder;
-  visibleOrder = getRandomNextOrder(cardsCount, visibleOrder);
-  
+ 
   cardsWrapper
   console.log('click');
 })
-
-
