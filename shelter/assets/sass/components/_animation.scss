@@ -18,9 +18,13 @@
 
 .slide-to-left {
   animation-name: toLeft;
-  animation-duration: 5s;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
 }
 .slide-to-right {
   animation-name: toRight;
-  animation-duration: 5s;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
 }

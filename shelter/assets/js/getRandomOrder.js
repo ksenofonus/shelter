@@ -8,7 +8,6 @@ export const getRandomStartOrder = (count) => {
     let x = getRandom(8);
     (order.includes(x)) ? x = getRandom(8) : order.push(x);
   }
-  console.log(order)
   return order;
 }
 
@@ -18,6 +17,5 @@ export const getRandomNextOrder = (count, startOrder) => {
     let x = getRandom(8);
     (order.includes(x) || startOrder.includes(x)) ? x = getRandom(8) : order.push(x);
   }
-  console.log(order)
   return order;
 }

@@ -37,7 +37,7 @@ const createPetsList = (order) => {
 
 const createSlider = (parent) => {
   let cardsWrapper = document.createElement('div');
-  cardsWrapper.className = 'cards-wrapper';
+  cardsWrapper.className = 'cards-wrapper cards-wrapper__visible';
   parent.append(cardsWrapper);
   let cardsList = createPetsList(visibleOrder);
   for (let i = 0; i < cardsList.length; i++) {
@@ -58,19 +58,20 @@ createSlider(slider)
 
 
 nextArrow.addEventListener('click', () => {
+  let cardsWrapper = document.querySelectorAll('.cards-wrapper');
+  let prevCard = document.querySelector('.cards-wrapper__prev');
+  !prevCard ? console.log('there is no prevcard') : prevCard.remove();
+  let visibleCard = document.querySelector('.cards-wrapper__visible');
+  cardsWrapper.forEach((item) => {
+    item.classList.remove('slide-to-left');
+  })
+  visibleCard.classList.add('cards-wrapper__prev');
+  visibleCard.classList.toggle('cards-wrapper__visible');
   visibleOrder = getRandomNextOrder(cardsCount, visibleOrder);
   createSlider(slider);
-  const cardsWrapper = document.querySelectorAll('.cards-wrapper');
-  cardsWrapper.forEach((item) => item.classList.add('slide-to-left'));
+  cardsWrapper = document.querySelectorAll('.cards-wrapper');
   cardsWrapper.forEach((item) => {
-    item.addEventListener('animationend', () => {
-      cardsWrapper.forEach((item) => { 
-        item.classList.remove('slide-to-left'); item.classList.add('cards-wrapper__prev')
-      })
-    })
+    item.classList.toggle('slide-to-left');
   })
-  prevOrder = visibleOrder;
- 
-  cardsWrapper
-  console.log('click');
-})
+  prevCard.classList.remove('slide-to-left')
+});

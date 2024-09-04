@@ -5,11 +5,16 @@
   width: 990px;
   overflow: hidden;
   gap: 90px;
+  transition: all 5s ease;
   & .cards-wrapper {
     display: flex;
     gap: 90px;
     width: 990px;
     height: 100%;
+    translate: 0% 0%;
+    &__prev {
+      translate: -100% 0%;
+    }
     @media screen and (max-width: 1225px) {
       gap: 60px;
     }
@@ -25,9 +30,6 @@
     }
     @media screen and (max-width: 767px) {
       width: 270px;
-    }
-    &__prev {
-      translate: calc(-100% - 90px) 0;
     }
   }
   &-container {
