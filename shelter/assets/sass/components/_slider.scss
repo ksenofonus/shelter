@@ -1,25 +1,28 @@
 .slider {
   display: flex;
-  flex-wrap: nowrap;
   max-height: 435px;
   width: 990px;
   overflow: hidden;
-  gap: 90px;
   transition: all 5s ease;
+  position: relative;
+  justify-content: center;
+  &-wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    translate: 0% 0%;
+  }
   & .cards-wrapper {
     display: flex;
+    width: 100%;
     gap: 90px;
-    width: 990px;
+    justify-content: space-between;
     height: 100%;
-    translate: 0% 0%;
-    &__prev {
-      translate: -100% 0%;
+    @media screen and (max-width: 1240px) {
+      width: 900px;
     }
-    @media screen and (max-width: 1225px) {
-      gap: 60px;
-    }
-    @media screen and (max-width: 1170px) {
-      gap: 40px;
+    @media screen and (max-width: 1180px) {
+      gap: 800px;
     }
     @media screen and (max-width: 1130px) {
       width: 580px;

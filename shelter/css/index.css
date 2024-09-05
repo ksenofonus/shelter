@@ -727,31 +727,34 @@ p {
 }
 .slider {
   display: flex;
-  flex-wrap: nowrap;
   max-height: 435px;
   width: 990px;
   overflow: hidden;
-  gap: 90px;
   transition: all 5s ease;
+  position: relative;
+  justify-content: center;
+}
+.slider-wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  translate: 0% 0%;
 }
 .slider .cards-wrapper {
   display: flex;
+  width: 100%;
   gap: 90px;
-  width: 990px;
+  justify-content: space-between;
   height: 100%;
-  translate: 0% 0%;
 }
-.slider .cards-wrapper__prev {
-  translate: -100% 0%;
-}
-@media screen and (max-width: 1225px) {
+@media screen and (max-width: 1240px) {
   .slider .cards-wrapper {
-    gap: 60px;
+    width: 900px;
   }
 }
-@media screen and (max-width: 1170px) {
+@media screen and (max-width: 1180px) {
   .slider .cards-wrapper {
-    gap: 40px;
+    gap: 800px;
   }
 }
 @media screen and (max-width: 1130px) {
@@ -906,12 +909,29 @@ p {
   background-color: #000;
 }
 
+@-webkit-keyframes toRight {
+  from {
+    translate: 100% 0%;
+  }
+  to {
+    translate: 0% 0%;
+  }
+}
+
 @keyframes toRight {
+  from {
+    translate: 100% 0%;
+  }
+  to {
+    translate: 0% 0%;
+  }
+}
+@-webkit-keyframes toLeft {
   from {
     translate: 0% 0%;
   }
   to {
-    translate: calc(100% + 90px) 0%;
+    translate: -100% 0%;
   }
 }
 @keyframes toLeft {
@@ -919,21 +939,25 @@ p {
     translate: 0% 0%;
   }
   to {
-    translate: calc(-100% - 90px) 0%;
+    translate: -100% 0%;
   }
 }
 .slide-to-left {
-  animation-name: toLeft;
-  animation-duration: 3s;
-  animation-fill-mode: both;
-  animation-timing-function: linear;
+  -webkit-animation-name: toLeft;
+          animation-name: toLeft;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 
 .slide-to-right {
-  animation-name: toRight;
-  animation-duration: 3s;
-  animation-fill-mode: both;
-  animation-timing-function: linear;
+  -webkit-animation-name: toRight;
+          animation-name: toRight;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 
 .header-top {

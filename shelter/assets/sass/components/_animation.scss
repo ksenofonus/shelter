@@ -1,9 +1,9 @@
 @keyframes toRight {
   from {
-    translate: 0% 0%;
+    translate: 100% 0%;
   }
   to {
-    translate: calc(100% + 90px) 0%;
+    translate: 0% 0%;
   }
 }
 
@@ -12,19 +12,17 @@
     translate: 0% 0%;
   }
   to {
-    translate: calc(-100% - 90px) 0%;
+    translate: -100% 0%;
   }
 }
 
 .slide-to-left {
   animation-name: toLeft;
   animation-duration: 3s;
-  animation-fill-mode: both;
   animation-timing-function: linear;
 }
 .slide-to-right {
   animation-name: toRight;
   animation-duration: 3s;
-  animation-fill-mode: both;
   animation-timing-function: linear;
 }
