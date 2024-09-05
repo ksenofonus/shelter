@@ -1,5 +1,4 @@
 import { getPetsData } from '/assets/js/pets.js';
-import { createCard } from '/assets/js/cards.js';
 import { getRandomStartOrder, getRandomNextOrder } from '/assets/js/getRandomOrder.js';
 const slider = document.querySelector('.slider-wrapper');
 const cardActive = document.querySelector('.cards-wrapper__active')
@@ -25,6 +24,7 @@ checkSliderWidth()
 
 let visibleOrder = getRandomStartOrder(cardsCount);
 let nextOrder = [];
+let prevOrder = [];
 
 const createPetsList = (order) => {
   let petsOrder = [];
@@ -33,7 +33,6 @@ const createPetsList = (order) => {
   }
   return petsOrder;
 }
-
 
 
 const createSlider = (parent, order) => {
@@ -47,27 +46,49 @@ const createSlider = (parent, order) => {
   }
 }
 
-const showNextSlider = (parent) => {
-  let cardsWrapper = document.createElement('div');
-  cardsWrapper.className = 'cards-wrapper card-wrapper__next slide-to-left';
-  parent.appendChild(cardsWrapper);
-  let cardsList = createPetsList(visibleOrder);
-  for (let i = 0; i < cardsList.length; i++) {
-    createCard(cardsWrapper, cardsList, i);
-  }
-}
-
 createSlider(cardActive, visibleOrder)
+
 
 nextArrow.addEventListener('click', (e) => {
   nextOrder = getRandomNextOrder(cardsCount, visibleOrder);
-  cardNext.innerHTML = '';
-  createSlider(cardNext, nextOrder);
-  slider.classList.add('slide-to-left');
-  slider.addEventListener('animationend', () => {
+  if (cardNext.childElementCount === 0) {
+    createSlider(cardNext, nextOrder);
+    slider.classList.add('slide-to-left');
+  } else if (cardNext.innerHTML === cardActive.innerHTML) {
+    cardNext.innerHTML = '';
+    createSlider(cardNext, nextOrder);
+    slider.classList.add('slide-to-left');
+  } else if (cardNext.innerHTML !== cardActive.innerHTML) {
+    slider.classList.add('slide-to-left');
+  }
+  slider.addEventListener('animationend', (animation) => {
+    console.log(animation)
     visibleOrder = nextOrder;
     cardPrev.innerHTML = cardActive.innerHTML;
     cardActive.innerHTML = cardNext.innerHTML;
+    cardNext.innerHTML = cardActive.innerHTML;
     slider.classList.remove('slide-to-left');
-  });
+  }, {once: true});
 });
+
+prevArrow.addEventListener('click', () => {
+  prevOrder = getRandomNextOrder(cardsCount, visibleOrder);
+  if (cardNext.childElementCount === 0) {
+    createSlider(cardPrev, prevOrder);
+    slider.classList.add('slide-to-right');
+  } else if (cardPrev.innerHTML === cardActive.innerHTML) {
+    cardPrev.innerHTML = '';
+    createSlider(cardPrev, prevOrder);
+    slider.classList.add('slide-to-right');
+  } else if (cardPrev.innerHTML !== cardActive.innerHTML) {
+    slider.classList.add('slide-to-right');
+  }
+  slider.addEventListener('animationend', (animation) => {
+    console.log(animation)
+    visibleOrder = prevOrder;
+    cardNext.innerHTML = cardActive.innerHTML;
+    cardActive.innerHTML = cardPrev.innerHTML;
+    cardPrev.innerHTML = cardActive.innerHTML;
+    slider.classList.remove('slide-to-right');
+  }, {once: true});
+})
