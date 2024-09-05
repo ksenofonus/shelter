@@ -53,16 +53,14 @@ nextArrow.addEventListener('click', (e) => {
   nextOrder = getRandomNextOrder(cardsCount, visibleOrder);
   if (cardNext.childElementCount === 0) {
     createSlider(cardNext, nextOrder);
-    slider.classList.add('slide-to-left');
   } else if (cardNext.innerHTML === cardActive.innerHTML) {
     cardNext.innerHTML = '';
     createSlider(cardNext, nextOrder);
     slider.classList.add('slide-to-left');
-  } else if (cardNext.innerHTML !== cardActive.innerHTML) {
-    slider.classList.add('slide-to-left');
-  }
+  } 
+  slider.classList.add('slide-to-left');
+  
   slider.addEventListener('animationend', (animation) => {
-    console.log(animation)
     visibleOrder = nextOrder;
     cardPrev.innerHTML = cardActive.innerHTML;
     cardActive.innerHTML = cardNext.innerHTML;
@@ -84,7 +82,6 @@ prevArrow.addEventListener('click', () => {
     slider.classList.add('slide-to-right');
   }
   slider.addEventListener('animationend', (animation) => {
-    console.log(animation)
     visibleOrder = prevOrder;
     cardNext.innerHTML = cardActive.innerHTML;
     cardActive.innerHTML = cardPrev.innerHTML;

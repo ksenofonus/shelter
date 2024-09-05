@@ -744,19 +744,8 @@ p {
 .slider .cards-wrapper {
   display: flex;
   width: 100%;
-  gap: 90px;
   justify-content: space-between;
   flex-shrink: 0;
-}
-@media screen and (max-width: 1240px) {
-  .slider .cards-wrapper {
-    width: 900px;
-  }
-}
-@media screen and (max-width: 1180px) {
-  .slider .cards-wrapper {
-    gap: 800px;
-  }
 }
 @media screen and (max-width: 1130px) {
   .slider .cards-wrapper {
