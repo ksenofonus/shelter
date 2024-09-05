@@ -50,18 +50,20 @@ createSlider(cardActive, visibleOrder)
 
 
 nextArrow.addEventListener('click', (e) => {
-  nextOrder = getRandomNextOrder(cardsCount, visibleOrder);
+  console.log(visibleOrder);
   if (cardNext.childElementCount === 0) {
+    nextOrder = getRandomNextOrder(cardsCount, visibleOrder);
     createSlider(cardNext, nextOrder);
   } else if (cardNext.innerHTML === cardActive.innerHTML) {
+    nextOrder = getRandomNextOrder(cardsCount, visibleOrder);
     cardNext.innerHTML = '';
     createSlider(cardNext, nextOrder);
-    slider.classList.add('slide-to-left');
-  } 
+  }
   slider.classList.add('slide-to-left');
-  
   slider.addEventListener('animationend', (animation) => {
+    prevOrder = visibleOrder;
     visibleOrder = nextOrder;
+    console.log(visibleOrder);
     cardPrev.innerHTML = cardActive.innerHTML;
     cardActive.innerHTML = cardNext.innerHTML;
     cardNext.innerHTML = cardActive.innerHTML;
@@ -70,19 +72,21 @@ nextArrow.addEventListener('click', (e) => {
 });
 
 prevArrow.addEventListener('click', () => {
-  prevOrder = getRandomNextOrder(cardsCount, visibleOrder);
+  console.log(visibleOrder);
   if (cardNext.childElementCount === 0) {
+    prevOrder = getRandomNextOrder(cardsCount, visibleOrder);
     createSlider(cardPrev, prevOrder);
-    slider.classList.add('slide-to-right');
   } else if (cardPrev.innerHTML === cardActive.innerHTML) {
+    prevOrder = getRandomNextOrder(cardsCount, visibleOrder);
     cardPrev.innerHTML = '';
     createSlider(cardPrev, prevOrder);
-    slider.classList.add('slide-to-right');
-  } else if (cardPrev.innerHTML !== cardActive.innerHTML) {
-    slider.classList.add('slide-to-right');
   }
+  slider.classList.add('slide-to-right');
+  
   slider.addEventListener('animationend', (animation) => {
+    nextOrder = visibleOrder;
     visibleOrder = prevOrder;
+    console.log(visibleOrder);
     cardNext.innerHTML = cardActive.innerHTML;
     cardActive.innerHTML = cardPrev.innerHTML;
     cardPrev.innerHTML = cardActive.innerHTML;
