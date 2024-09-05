@@ -11,11 +11,11 @@ export const getRandomStartOrder = (count) => {
   return order;
 }
 
-export const getRandomNextOrder = (count, startOrder) => {
+export const getRandomNextOrder = (count, visibleOrder) => {
   let order = [];
   while (order.length < count) {
     let x = getRandom(8);
-    (order.includes(x) || startOrder.includes(x)) ? x = getRandom(8) : order.push(x);
+    (order.includes(x) || visibleOrder.includes(x)) ? x = getRandom(8) : order.push(x);
   }
   return order;
 }

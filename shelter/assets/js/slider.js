@@ -24,7 +24,6 @@ const checkSliderWidth = () => {
 checkSliderWidth()
 
 let visibleOrder = getRandomStartOrder(cardsCount);
-let prevOrder = [];
 let nextOrder = [];
 
 const createPetsList = (order) => {
@@ -37,34 +36,38 @@ const createPetsList = (order) => {
 
 
 
-const createSlider = (parent) => {
-  let cardsList = createPetsList(visibleOrder);
+const createSlider = (parent, order) => {
+  let cardsList = createPetsList(order);
   for (let i = 0; i < cardsList.length; i++) {
-    parent.append(createCard(cardsList, i))
+    let card = document.createElement('div');
+    card.className = 'pets';
+    card.innerHTML = `<div class="pets_img"><img src="${cardsList[i].img}" alt="${cardsList[i].name}"></div><div class="pets_name">${cardsList[i].name}</div><button class="button button_secondary">Learn more</button>`;
+    parent.append(card)
     ;
   }
-  
 }
+
 const showNextSlider = (parent) => {
   let cardsWrapper = document.createElement('div');
   cardsWrapper.className = 'cards-wrapper card-wrapper__next slide-to-left';
-  parent.append(cardsWrapper);
+  parent.appendChild(cardsWrapper);
   let cardsList = createPetsList(visibleOrder);
   for (let i = 0; i < cardsList.length; i++) {
     createCard(cardsWrapper, cardsList, i);
   }
 }
 
-createSlider(cardActive)
+createSlider(cardActive, visibleOrder)
 
-console.log(cardActive)
 nextArrow.addEventListener('click', (e) => {
-  createSlider(cardNext)
+  nextOrder = getRandomNextOrder(cardsCount, visibleOrder);
+  cardNext.innerHTML = '';
+  createSlider(cardNext, nextOrder);
   slider.classList.add('slide-to-left');
   slider.addEventListener('animationend', () => {
+    visibleOrder = nextOrder;
+    cardPrev.innerHTML = cardActive.innerHTML;
+    cardActive.innerHTML = cardNext.innerHTML;
     slider.classList.remove('slide-to-left');
-    cardPrev.innerHTML = cardActive;
-    cardActive.innerHTML = cardNext;
-    cardNext.innerHTML = '';
   });
 });
