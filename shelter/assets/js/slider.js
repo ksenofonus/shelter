@@ -1,6 +1,5 @@
 import { getPetsData } from '/assets/js/pets.js';
 import { getRandomStartOrder, getRandomNextOrder } from '/assets/js/getRandomOrder.js';
-import { cardsCount } from '/assets/js/width.js';
 import { showModal, petsList } from '/assets/js/popap.js';
 
 const slider = document.querySelector('.slider-wrapper');
@@ -9,11 +8,7 @@ const cardNext = document.querySelector('.cards-wrapper__next')
 const cardPrev = document.querySelector('.cards-wrapper__prev')
 const nextArrow = document.querySelector('.arrow__right');
 const prevArrow = document.querySelector('.arrow__left');
-
-
-
-
-// checkSliderWidth()
+let cardsCount = 3;
 
 let visibleOrder = getRandomStartOrder(cardsCount);
 let nextOrder = [];

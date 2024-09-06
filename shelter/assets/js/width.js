@@ -1,10 +1,10 @@
-export let cardsCount = 3;
-export const checkSliderWidth = () => {
+
+export const checkWidth = () => {
   let windowWidth = window.innerWidth;
-  if (windowWidth <= 1130 && windowWidth > 767) {
-    cardsCount = 2;
-  } else if (windowWidth <= 767) {
-    cardsCount = 1;
+  if (windowWidth <= 1266 && windowWidth > 767) {
+    return 8;
+  } else if (windowWidth <= 657) {
+    return 16;
   }
-  return cardsCount;
+  return 6;
 }
