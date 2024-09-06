@@ -900,12 +900,29 @@ p {
   background-color: #000;
 }
 
+@-webkit-keyframes toRight {
+  from {
+    translate: 0% 0%;
+  }
+  to {
+    translate: 100% 0%;
+  }
+}
+
 @keyframes toRight {
   from {
     translate: 0% 0%;
   }
   to {
     translate: 100% 0%;
+  }
+}
+@-webkit-keyframes toLeft {
+  from {
+    translate: 0% 0%;
+  }
+  to {
+    translate: -100% 0%;
   }
 }
 @keyframes toLeft {
@@ -917,15 +934,21 @@ p {
   }
 }
 .slide-to-left {
-  animation-name: toLeft;
-  animation-duration: 1.5s;
-  animation-timing-function: linear;
+  -webkit-animation-name: toLeft;
+          animation-name: toLeft;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 
 .slide-to-right {
-  animation-name: toRight;
-  animation-duration: 1.5s;
-  animation-timing-function: linear;
+  -webkit-animation-name: toRight;
+          animation-name: toRight;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 
 .modal {
@@ -946,6 +969,7 @@ p {
 @media screen and (max-width: 735px) {
   .modal {
     width: 240px;
+    min-height: 341px;
   }
 }
 .modal_close {
@@ -993,7 +1017,7 @@ p {
 @media screen and (max-width: 735px) {
   .modal_info {
     align-items: center;
-    margin: 10px;
+    margin: 9px 10px 9px 10px;
   }
 }
 .modal_img {
@@ -1030,13 +1054,13 @@ p {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 20px;
   color: #000;
-  line-height: 115%;
+  line-height: 23px;
   letter-spacing: 0.06em;
 }
 .modal .description {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: #000;
-  line-height: 114%;
+  line-height: 17px;
   letter-spacing: 0.06em;
   margin-top: 40px;
   margin-bottom: 40px;
@@ -1045,12 +1069,13 @@ p {
   .modal .description {
     font-size: 13px;
     margin: 21px 0 18px;
-    line-height: 108%;
+    line-height: 14px;
   }
 }
 @media screen and (max-width: 735px) {
   .modal .description {
     text-align: justify;
+    margin: 22px 0 24px;
   }
 }
 .modal .parameteres {
@@ -1064,13 +1089,15 @@ p {
 .modal .parameteres .parameter {
   position: relative;
   color: #f1cdb3;
-  margin-bottom: 10px;
   padding-left: 14px;
   letter-spacing: 0.06em;
-  line-height: 120%;
+  line-height: 18px;
+}
+.modal .parameteres .parameter:not(:last-child) {
+  margin-bottom: 10px;
 }
 @media screen and (max-width: 1000px) {
-  .modal .parameteres .parameter {
+  .modal .parameteres .parameter:not(:last-child) {
     margin-bottom: 5px;
   }
 }

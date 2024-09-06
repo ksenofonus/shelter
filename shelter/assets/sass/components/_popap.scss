@@ -12,6 +12,7 @@
   }
   @media screen and (max-width: 735px) {
     width: 240px;
+    min-height: 341px;
   }
   &_close {
     position: absolute;
@@ -53,7 +54,7 @@
     }
     @media screen and (max-width: 735px) {
       align-items: center;
-      margin: 10px;
+      margin: 9px 10px 9px 10px;
     }
   }
   &_img {
@@ -86,23 +87,24 @@
    font-family: Georgia, 'Times New Roman', Times, serif;
    font-size: 20px;
    color: #000;
-   line-height: 115%;
+   line-height: 23px;
    letter-spacing: 0.06em;
   }
   & .description {
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #000;
-    line-height: 114%;
+    line-height: 17px;
     letter-spacing: 0.06em;
     margin-top: 40px;
     margin-bottom: 40px;
     @media screen and (max-width: 1000px) {
       font-size: 13px;
       margin: 21px 0 18px;
-      line-height: 108%;
+      line-height: 14px;
     }
     @media screen and (max-width: 735px) {
       text-align: justify;
+      margin: 22px 0 24px;
     }
   }
   & .parameteres {
@@ -113,12 +115,16 @@
     & .parameter {
       position: relative;
       color: $color-primary;
-      margin-bottom: 10px;
       padding-left: 14px;
       letter-spacing: 0.06em;
-      line-height: 120%;
+      line-height: 18px;
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
       @media screen and (max-width: 1000px) {
-        margin-bottom: 5px;
+        &:not(:last-child) {
+          margin-bottom: 5px;
+        }
       }
       
       &::before {
