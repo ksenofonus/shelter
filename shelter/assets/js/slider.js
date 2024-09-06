@@ -1,39 +1,90 @@
 import { getPetsData } from '/assets/js/pets.js';
-import { createCard } from '/assets/js/cards.js';
-const slider = document.querySelector('.slider');
-const petsList = await getPetsData();
+import { getRandomStartOrder, getRandomNextOrder } from '/assets/js/getRandomOrder.js';
+import { checkSliderWidth, cardsCount } from '/assets/js/width.js';
+import { showModal } from '/assets/js/popap.js';
 
-let startIndex = 0
-let cardsCount = 3;
+const slider = document.querySelector('.slider-wrapper');
+const cardActive = document.querySelector('.cards-wrapper__active')
+const cardNext = document.querySelector('.cards-wrapper__next')
+const cardPrev = document.querySelector('.cards-wrapper__prev')
+const nextArrow = document.querySelector('.arrow__right');
+const prevArrow = document.querySelector('.arrow__left');
 
-const checkSliderWidth = () => {
-  let windowWidth = window.innerWidth;
-  if (windowWidth <= 1130 && windowWidth > 767) {
-    cardsCount = 2;
-  } else if (windowWidth <= 767) {
-    cardsCount = 1;
+export const petsList = await getPetsData();
+
+
+// checkSliderWidth()
+
+let visibleOrder = getRandomStartOrder(cardsCount);
+let nextOrder = [];
+let prevOrder = [];
+
+const createPetsList = (order) => {
+  let petsOrder = [];
+  for (let i = 0; i < order.length; i++) {
+    petsOrder.push(petsList[order[i]])
   }
-  return cardsCount;
-}
-checkSliderWidth()
-
-const createList = () => {
-
+  return petsOrder;
 }
 
-const showSlider = (count, parent, petsList) => {
-  let cardsList = [];
-  for (let i=0; i < count; i++) {
-    cardsList.push(petsList[i]);
-  }
+
+export const createSlider = (parent, order) => {
+  let cardsList = createPetsList(order);
   for (let i = 0; i < cardsList.length; i++) {
-    createCard(parent, cardsList, i);
+    let card = document.createElement('div');
+    card.className = 'pets';
+    card.setAttribute("data-id", `${order[i]}`);
+    card.innerHTML = `<div class="pets_img"><img src="${cardsList[i].img}" alt="${cardsList[i].name}"></div><div class="pets_name">${cardsList[i].name}</div><button class="button button_secondary">Learn more</button>`;
+    parent.append(card);
   }
 }
 
-showSlider(cardsCount, slider, petsList)
+createSlider(cardActive, visibleOrder);
+export let petCards = document.querySelectorAll('.pets');
+showModal();
 
+nextArrow.addEventListener('click', (e) => {
+  if (cardNext.childElementCount === 0) {
+    nextOrder = getRandomNextOrder(3, visibleOrder);
+    createSlider(cardNext, nextOrder);
+  } else if (cardNext.innerHTML === cardActive.innerHTML) {
+    nextOrder = getRandomNextOrder(3, visibleOrder);
+    cardNext.innerHTML = '';
+    createSlider(cardNext, nextOrder);
+  }
+  slider.classList.add('slide-to-left');
+  slider.addEventListener('animationend', (animation) => {
+    prevOrder = visibleOrder;
+    visibleOrder = nextOrder;
+    console.log(visibleOrder);
+    cardPrev.innerHTML = cardActive.innerHTML;
+    cardActive.innerHTML = cardNext.innerHTML;
+    cardNext.innerHTML = cardActive.innerHTML;
+    slider.classList.remove('slide-to-left');
+    petCards = document.querySelectorAll('.pets');
+    showModal();
+  }, {once: true});
+});
 
-
-
-
+prevArrow.addEventListener('click', () => {
+  if (cardNext.childElementCount === 0) {
+    prevOrder = getRandomNextOrder(3, visibleOrder);
+    createSlider(cardPrev, prevOrder);
+  } else if (cardPrev.innerHTML === cardActive.innerHTML) {
+    prevOrder = getRandomNextOrder(3, visibleOrder);
+    cardPrev.innerHTML = '';
+    createSlider(cardPrev, prevOrder);
+  }
+  slider.classList.add('slide-to-right');
+  slider.addEventListener('animationend', (animation) => {
+    nextOrder = visibleOrder;
+    visibleOrder = prevOrder;
+    console.log(visibleOrder);
+    cardNext.innerHTML = cardActive.innerHTML;
+    cardActive.innerHTML = cardPrev.innerHTML;
+    cardPrev.innerHTML = cardActive.innerHTML;
+    slider.classList.remove('slide-to-right');
+    petCards = document.querySelectorAll('.pets');
+    showModal();
+  }, {once: true});
+})

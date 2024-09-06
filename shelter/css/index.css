@@ -727,9 +727,42 @@ p {
 }
 .slider {
   display: flex;
-  justify-content: space-between;
+  max-height: 435px;
   width: 990px;
   overflow: hidden;
+  transition: all 5s ease;
+  position: relative;
+  justify-content: center;
+}
+.slider-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  translate: 0% 0%;
+}
+.slider .cards-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+@media screen and (max-width: 1130px) {
+  .slider .cards-wrapper {
+    width: 580px;
+    gap: 40px;
+  }
+}
+@media screen and (max-width: 800px) and (min-width: 769px) {
+  .slider .cards-wrapper {
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .slider .cards-wrapper {
+    width: 270px;
+  }
 }
 .slider-container {
   display: flex;
@@ -764,12 +797,6 @@ p {
 @media screen and (max-width: 1130px) {
   .slider {
     width: 580px;
-    gap: 40px;
-  }
-}
-@media screen and (max-width: 800px) and (min-width: 769px) {
-  .slider {
-    gap: 30px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -865,12 +892,230 @@ p {
 .back {
   min-width: 100vw;
   min-height: 100vh;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   opacity: 0.5;
   z-index: 1;
   background-color: #000;
+}
+
+@-webkit-keyframes toRight {
+  from {
+    translate: 0% 0%;
+  }
+  to {
+    translate: 100% 0%;
+  }
+}
+
+@keyframes toRight {
+  from {
+    translate: 0% 0%;
+  }
+  to {
+    translate: 100% 0%;
+  }
+}
+@-webkit-keyframes toLeft {
+  from {
+    translate: 0% 0%;
+  }
+  to {
+    translate: -100% 0%;
+  }
+}
+@keyframes toLeft {
+  from {
+    translate: 0% 0%;
+  }
+  to {
+    translate: -100% 0%;
+  }
+}
+.slide-to-left {
+  -webkit-animation-name: toLeft;
+          animation-name: toLeft;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+.slide-to-right {
+  -webkit-animation-name: toRight;
+          animation-name: toRight;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+.modal {
+  position: fixed;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  min-height: 552px;
+}
+@media screen and (max-width: 1000px) {
+  .modal {
+    width: 630px;
+    min-height: 350px;
+  }
+}
+@media screen and (max-width: 735px) {
+  .modal {
+    width: 240px;
+    min-height: 341px;
+  }
+}
+.modal_close {
+  position: absolute;
+  align-self: flex-end;
+  top: -52px;
+  right: -42px;
+  width: 52px;
+  height: 52px;
+  border-radius: 100%;
+  border: 2px solid #f1cdb3;
+  cursor: pointer;
+}
+.modal_close > svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 735px) {
+  .modal_close {
+    right: -30px;
+  }
+}
+.modal_body {
+  position: relative;
+  display: flex;
+  border-radius: 9px;
+  background-color: #fff;
+  justify-content: space-between;
+}
+.modal_info {
+  margin-top: 51px;
+  margin-right: 20px;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 1000px) {
+  .modal_info {
+    margin: 11px 9px 0px 10px;
+    height: auto;
+  }
+}
+@media screen and (max-width: 735px) {
+  .modal_info {
+    align-items: center;
+    margin: 9px 10px 9px 10px;
+  }
+}
+.modal_img {
+  flex-shrink: 0;
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 1000px) {
+  .modal_img {
+    width: 350px;
+    height: 350px;
+  }
+}
+@media screen and (max-width: 735px) {
+  .modal_img {
+    display: none;
+  }
+}
+.modal_img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 9px;
+}
+.modal_name {
+  color: black;
+  line-height: 45px;
+  margin-bottom: 9px;
+}
+.modal .type {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 20px;
+  color: #000;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+}
+.modal .description {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #000;
+  line-height: 17px;
+  letter-spacing: 0.06em;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 1000px) {
+  .modal .description {
+    font-size: 13px;
+    margin: 21px 0 18px;
+    line-height: 14px;
+  }
+}
+@media screen and (max-width: 735px) {
+  .modal .description {
+    text-align: justify;
+    margin: 22px 0 24px;
+  }
+}
+.modal .parameteres {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+@media screen and (max-width: 735px) {
+  .modal .parameteres {
+    align-self: flex-start;
+  }
+}
+.modal .parameteres .parameter {
+  position: relative;
+  color: #f1cdb3;
+  padding-left: 14px;
+  letter-spacing: 0.06em;
+  line-height: 18px;
+}
+.modal .parameteres .parameter:not(:last-child) {
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 1000px) {
+  .modal .parameteres .parameter:not(:last-child) {
+    margin-bottom: 5px;
+  }
+}
+.modal .parameteres .parameter::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 100%;
+  background-color: #f1cdb3;
+}
+.modal .parameteres .parameter > span {
+  color: #000;
+}
+.modal .parameteres .parameter_name {
+  font-weight: bold;
 }
 
 .header-top {

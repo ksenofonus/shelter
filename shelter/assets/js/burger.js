@@ -1,14 +1,12 @@
-import { createBack, back } from "./back.js";
+import { createBack, removeBack } from "./back.js";
 const menu = document.querySelector('.header-nav');
 const menuItem = document.querySelectorAll('.header-nav_item');
 const burgerButton = document.querySelector('.burger');
 
 const toggleMenu = () => {
-  menu.classList.contains('header-nav__active') ? back.remove() : createBack();
+  menu.classList.contains('header-nav__active') ? removeBack() : createBack();
   burgerButton.classList.toggle('burger__active');
   menu.classList.toggle('header-nav__active');
-  document.body.classList.toggle('body_no-scroll');
-  
 }
 
 const menuToggle = () => {
@@ -30,5 +28,15 @@ const menuToggle = () => {
   })
 }
 menuToggle()
+
+const resize = () => {
+  window.addEventListener('resize', (e) => {
+    if (menu.classList.contains('header-nav__active')) {
+      removeBack();
+      toggleMenu();
+    }
+  })
+}
+resize()
 
 export { menuToggle };
