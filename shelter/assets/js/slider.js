@@ -1,7 +1,7 @@
 import { getPetsData } from '/assets/js/pets.js';
 import { getRandomStartOrder, getRandomNextOrder } from '/assets/js/getRandomOrder.js';
-import { checkSliderWidth, cardsCount } from '/assets/js/width.js';
-import { showModal } from '/assets/js/popap.js';
+import { cardsCount } from '/assets/js/width.js';
+import { showModal, petsList } from '/assets/js/popap.js';
 
 const slider = document.querySelector('.slider-wrapper');
 const cardActive = document.querySelector('.cards-wrapper__active')
@@ -10,7 +10,7 @@ const cardPrev = document.querySelector('.cards-wrapper__prev')
 const nextArrow = document.querySelector('.arrow__right');
 const prevArrow = document.querySelector('.arrow__left');
 
-export const petsList = await getPetsData();
+
 
 
 // checkSliderWidth()
@@ -28,7 +28,7 @@ const createPetsList = (order) => {
 }
 
 
-export const createSlider = (parent, order) => {
+const createSlider = (parent, order) => {
   let cardsList = createPetsList(order);
   for (let i = 0; i < cardsList.length; i++) {
     let card = document.createElement('div');
@@ -39,9 +39,10 @@ export const createSlider = (parent, order) => {
   }
 }
 
+
 createSlider(cardActive, visibleOrder);
-export let petCards = document.querySelectorAll('.pets');
-showModal();
+let petCards = document.querySelectorAll('.pets');
+showModal(petCards);
 
 nextArrow.addEventListener('click', (e) => {
   if (cardNext.childElementCount === 0) {
@@ -62,7 +63,7 @@ nextArrow.addEventListener('click', (e) => {
     cardNext.innerHTML = cardActive.innerHTML;
     slider.classList.remove('slide-to-left');
     petCards = document.querySelectorAll('.pets');
-    showModal();
+    showModal(petCards);
   }, {once: true});
 });
 
@@ -85,6 +86,6 @@ prevArrow.addEventListener('click', () => {
     cardPrev.innerHTML = cardActive.innerHTML;
     slider.classList.remove('slide-to-right');
     petCards = document.querySelectorAll('.pets');
-    showModal();
+    showModal(petCards);
   }, {once: true});
 })
