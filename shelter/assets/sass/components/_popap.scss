@@ -1,20 +1,39 @@
 .modal {
-  display: flex;
-  width: 900px;
-  min-height: 500px;
   position: absolute;
   z-index: 5;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 9px;
-  background-color: #fff;
-  justify-content: space-between;
+  &_close {
+    position: absolute;
+    right: -42px;
+    top: -52px;
+    width: 52px;
+    height: 52px;
+    border-radius: 100%;
+    border: 2px solid $color-primary;
+    background-color: #fff;
+    cursor: pointer;
+    & > svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &_body {
+    position: relative;
+    display: flex;
+    width: 900px;
+    min-height: 500px;
+    border-radius: 9px;
+    background-color: #fff;
+    justify-content: space-between;
+  }
   &_info {
-    
-    margin-top: 50px;
+    margin-top: 51px;
     margin-right: 20px;
-    margin-left: 29px;
+    margin-left: 30px;
   }
   &_img {
     flex-shrink: 0;
@@ -29,25 +48,43 @@
   &_name {
     color: black;
     line-height: 45px;
+    margin-bottom: 9px;
   }
   & .type {
    font-family: Georgia, 'Times New Roman', Times, serif;
    font-size: 20px;
    color: #000;
+   line-height: 115%;
+   letter-spacing: 0.06em;
   }
   & .description {
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #000;
-    line-height: 16px;
+    line-height: 114%;
+    letter-spacing: 0.06em;
     margin-top: 40px;
     margin-bottom: 40px;
   }
   & .parameteres {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    list-style: disc inside;
     & .parameter {
+      position: relative;
       color: $color-primary;
       margin-bottom: 10px;
+      padding-left: 14px;
+      letter-spacing: 0.06em;
+      line-height: 120%;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 4px;
+        height: 4px;
+        border-radius: 100%;
+        background-color: $color-primary;
+        transform: translate(0, -50%);
+      }
       & > span {
         color: #000;
       }

@@ -900,29 +900,12 @@ p {
   background-color: #000;
 }
 
-@-webkit-keyframes toRight {
-  from {
-    translate: 0% 0%;
-  }
-  to {
-    translate: 100% 0%;
-  }
-}
-
 @keyframes toRight {
   from {
     translate: 0% 0%;
   }
   to {
     translate: 100% 0%;
-  }
-}
-@-webkit-keyframes toLeft {
-  from {
-    translate: 0% 0%;
-  }
-  to {
-    translate: -100% 0%;
   }
 }
 @keyframes toLeft {
@@ -934,40 +917,54 @@ p {
   }
 }
 .slide-to-left {
-  -webkit-animation-name: toLeft;
-          animation-name: toLeft;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
+  animation-name: toLeft;
+  animation-duration: 3s;
+  animation-timing-function: linear;
 }
 
 .slide-to-right {
-  -webkit-animation-name: toRight;
-          animation-name: toRight;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
+  animation-name: toRight;
+  animation-duration: 3s;
+  animation-timing-function: linear;
 }
 
 .modal {
-  display: flex;
-  width: 900px;
-  min-height: 500px;
   position: absolute;
   z-index: 5;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.modal_close {
+  position: absolute;
+  right: -42px;
+  top: -52px;
+  width: 52px;
+  height: 52px;
+  border-radius: 100%;
+  border: 2px solid #f1cdb3;
+  background-color: #fff;
+  cursor: pointer;
+}
+.modal_close > svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.modal_body {
+  position: relative;
+  display: flex;
+  width: 900px;
+  min-height: 500px;
   border-radius: 9px;
   background-color: #fff;
   justify-content: space-between;
 }
 .modal_info {
-  margin-top: 50px;
+  margin-top: 51px;
   margin-right: 20px;
-  margin-left: 29px;
+  margin-left: 30px;
 }
 .modal_img {
   flex-shrink: 0;
@@ -982,26 +979,44 @@ p {
 .modal_name {
   color: black;
   line-height: 45px;
+  margin-bottom: 9px;
 }
 .modal .type {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 20px;
   color: #000;
+  line-height: 115%;
+  letter-spacing: 0.06em;
 }
 .modal .description {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: #000;
-  line-height: 16px;
+  line-height: 114%;
+  letter-spacing: 0.06em;
   margin-top: 40px;
   margin-bottom: 40px;
 }
 .modal .parameteres {
   font-family: Georgia, "Times New Roman", Times, serif;
-  list-style: disc inside;
 }
 .modal .parameteres .parameter {
+  position: relative;
   color: #f1cdb3;
   margin-bottom: 10px;
+  padding-left: 14px;
+  letter-spacing: 0.06em;
+  line-height: 120%;
+}
+.modal .parameteres .parameter::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 100%;
+  background-color: #f1cdb3;
+  transform: translate(0, -50%);
 }
 .modal .parameteres .parameter > span {
   color: #000;
