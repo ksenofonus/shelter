@@ -62,6 +62,13 @@ export const showModal = (cards) => {
   })
 }
 
+const toStart = document.querySelector('.button_start');
+const toPrev = document.querySelector('.button_prev');
+const toNext = document.querySelector('.button_next');
+const toEnd = document.querySelector('.button_end');
+const pageNumber = document.querySelector('.button__active');
+
+
 
 
 
