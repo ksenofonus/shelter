@@ -1,0 +1,59 @@
+.modal {
+  display: flex;
+  width: 900px;
+  min-height: 500px;
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 9px;
+  background-color: #fff;
+  justify-content: space-between;
+  &_info {
+    
+    margin-top: 50px;
+    margin-right: 20px;
+    margin-left: 29px;
+  }
+  &_img {
+    flex-shrink: 0;
+    width: 500px;
+    height: 500px;
+    & img {
+      width: 100%;
+      height: 100%;
+      border-radius: 9px;
+    }
+  }
+  &_name {
+    color: black;
+    line-height: 45px;
+  }
+  & .type {
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   font-size: 20px;
+   color: #000;
+  }
+  & .description {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #000;
+    line-height: 16px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  & .parameteres {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    list-style: disc inside;
+    & .parameter {
+      color: $color-primary;
+      margin-bottom: 10px;
+      & > span {
+        color: #000;
+      }
+      &_name {
+        font-weight: bold;
+      }
+    }
+  }
+}

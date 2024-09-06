@@ -746,6 +746,7 @@ p {
   width: 100%;
   justify-content: space-between;
   flex-shrink: 0;
+  overflow: hidden;
 }
 @media screen and (max-width: 1130px) {
   .slider .cards-wrapper {
@@ -899,12 +900,29 @@ p {
   background-color: #000;
 }
 
+@-webkit-keyframes toRight {
+  from {
+    translate: 0% 0%;
+  }
+  to {
+    translate: 100% 0%;
+  }
+}
+
 @keyframes toRight {
   from {
     translate: 0% 0%;
   }
   to {
     translate: 100% 0%;
+  }
+}
+@-webkit-keyframes toLeft {
+  from {
+    translate: 0% 0%;
+  }
+  to {
+    translate: -100% 0%;
   }
 }
 @keyframes toLeft {
@@ -916,15 +934,80 @@ p {
   }
 }
 .slide-to-left {
-  animation-name: toLeft;
-  animation-duration: 3s;
-  animation-timing-function: linear;
+  -webkit-animation-name: toLeft;
+          animation-name: toLeft;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 
 .slide-to-right {
-  animation-name: toRight;
-  animation-duration: 3s;
-  animation-timing-function: linear;
+  -webkit-animation-name: toRight;
+          animation-name: toRight;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+.modal {
+  display: flex;
+  width: 900px;
+  min-height: 500px;
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 9px;
+  background-color: #fff;
+  justify-content: space-between;
+}
+.modal_info {
+  margin-top: 50px;
+  margin-right: 20px;
+  margin-left: 29px;
+}
+.modal_img {
+  flex-shrink: 0;
+  width: 500px;
+  height: 500px;
+}
+.modal_img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 9px;
+}
+.modal_name {
+  color: black;
+  line-height: 45px;
+}
+.modal .type {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 20px;
+  color: #000;
+}
+.modal .description {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #000;
+  line-height: 16px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.modal .parameteres {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  list-style: disc inside;
+}
+.modal .parameteres .parameter {
+  color: #f1cdb3;
+  margin-bottom: 10px;
+}
+.modal .parameteres .parameter > span {
+  color: #000;
+}
+.modal .parameteres .parameter_name {
+  font-weight: bold;
 }
 
 .header-top {

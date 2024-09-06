@@ -1,5 +1,6 @@
 import { getPetsData } from '/assets/js/pets.js';
 import { getRandomStartOrder, getRandomNextOrder } from '/assets/js/getRandomOrder.js';
+import { checkSliderWidth, cardsCount } from '/assets/js/width.js';
 const slider = document.querySelector('.slider-wrapper');
 const cardActive = document.querySelector('.cards-wrapper__active')
 const cardNext = document.querySelector('.cards-wrapper__next')
@@ -7,19 +8,9 @@ const cardPrev = document.querySelector('.cards-wrapper__prev')
 const nextArrow = document.querySelector('.arrow__right');
 const prevArrow = document.querySelector('.arrow__left');
 
-const petsList = await getPetsData();
+export const petsList = await getPetsData();
 
-let cardsCount = 3;
 
-const checkSliderWidth = () => {
-  let windowWidth = window.innerWidth;
-  if (windowWidth <= 1130 && windowWidth > 767) {
-    cardsCount = 2;
-  } else if (windowWidth <= 767) {
-    cardsCount = 1;
-  }
-  return cardsCount;
-}
 checkSliderWidth()
 
 let visibleOrder = getRandomStartOrder(cardsCount);
@@ -50,12 +41,11 @@ createSlider(cardActive, visibleOrder)
 
 
 nextArrow.addEventListener('click', (e) => {
-  console.log(visibleOrder);
   if (cardNext.childElementCount === 0) {
-    nextOrder = getRandomNextOrder(cardsCount, visibleOrder);
+    nextOrder = getRandomNextOrder(3, visibleOrder);
     createSlider(cardNext, nextOrder);
   } else if (cardNext.innerHTML === cardActive.innerHTML) {
-    nextOrder = getRandomNextOrder(cardsCount, visibleOrder);
+    nextOrder = getRandomNextOrder(3, visibleOrder);
     cardNext.innerHTML = '';
     createSlider(cardNext, nextOrder);
   }
@@ -72,17 +62,15 @@ nextArrow.addEventListener('click', (e) => {
 });
 
 prevArrow.addEventListener('click', () => {
-  console.log(visibleOrder);
   if (cardNext.childElementCount === 0) {
-    prevOrder = getRandomNextOrder(cardsCount, visibleOrder);
+    prevOrder = getRandomNextOrder(3, visibleOrder);
     createSlider(cardPrev, prevOrder);
   } else if (cardPrev.innerHTML === cardActive.innerHTML) {
-    prevOrder = getRandomNextOrder(cardsCount, visibleOrder);
+    prevOrder = getRandomNextOrder(3, visibleOrder);
     cardPrev.innerHTML = '';
     createSlider(cardPrev, prevOrder);
   }
   slider.classList.add('slide-to-right');
-  
   slider.addEventListener('animationend', (animation) => {
     nextOrder = visibleOrder;
     visibleOrder = prevOrder;
