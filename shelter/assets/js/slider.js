@@ -1,6 +1,8 @@
 import { getPetsData } from '/assets/js/pets.js';
 import { getRandomStartOrder, getRandomNextOrder } from '/assets/js/getRandomOrder.js';
 import { checkSliderWidth, cardsCount } from '/assets/js/width.js';
+import { showModal } from '/assets/js/popap.js';
+
 const slider = document.querySelector('.slider-wrapper');
 const cardActive = document.querySelector('.cards-wrapper__active')
 const cardNext = document.querySelector('.cards-wrapper__next')
@@ -11,7 +13,7 @@ const prevArrow = document.querySelector('.arrow__left');
 export const petsList = await getPetsData();
 
 
-checkSliderWidth()
+// checkSliderWidth()
 
 let visibleOrder = getRandomStartOrder(cardsCount);
 let nextOrder = [];
@@ -26,19 +28,20 @@ const createPetsList = (order) => {
 }
 
 
-const createSlider = (parent, order) => {
+export const createSlider = (parent, order) => {
   let cardsList = createPetsList(order);
   for (let i = 0; i < cardsList.length; i++) {
     let card = document.createElement('div');
     card.className = 'pets';
+    card.setAttribute("data-id", `${order[i]}`);
     card.innerHTML = `<div class="pets_img"><img src="${cardsList[i].img}" alt="${cardsList[i].name}"></div><div class="pets_name">${cardsList[i].name}</div><button class="button button_secondary">Learn more</button>`;
-    parent.append(card)
-    ;
+    parent.append(card);
   }
 }
 
-createSlider(cardActive, visibleOrder)
-
+createSlider(cardActive, visibleOrder);
+export let petCards = document.querySelectorAll('.pets');
+showModal();
 
 nextArrow.addEventListener('click', (e) => {
   if (cardNext.childElementCount === 0) {
@@ -58,6 +61,8 @@ nextArrow.addEventListener('click', (e) => {
     cardActive.innerHTML = cardNext.innerHTML;
     cardNext.innerHTML = cardActive.innerHTML;
     slider.classList.remove('slide-to-left');
+    petCards = document.querySelectorAll('.pets');
+    showModal();
   }, {once: true});
 });
 
@@ -79,5 +84,7 @@ prevArrow.addEventListener('click', () => {
     cardActive.innerHTML = cardPrev.innerHTML;
     cardPrev.innerHTML = cardActive.innerHTML;
     slider.classList.remove('slide-to-right');
+    petCards = document.querySelectorAll('.pets');
+    showModal();
   }, {once: true});
 })

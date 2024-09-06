@@ -892,7 +892,7 @@ p {
 .back {
   min-width: 100vw;
   min-height: 100vh;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   opacity: 0.5;
@@ -918,32 +918,45 @@ p {
 }
 .slide-to-left {
   animation-name: toLeft;
-  animation-duration: 3s;
+  animation-duration: 1.5s;
   animation-timing-function: linear;
 }
 
 .slide-to-right {
   animation-name: toRight;
-  animation-duration: 3s;
+  animation-duration: 1.5s;
   animation-timing-function: linear;
 }
 
 .modal {
-  position: absolute;
+  position: fixed;
   z-index: 5;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 900px;
+  min-height: 552px;
+}
+@media screen and (max-width: 1000px) {
+  .modal {
+    width: 630px;
+    min-height: 350px;
+  }
+}
+@media screen and (max-width: 735px) {
+  .modal {
+    width: 240px;
+  }
 }
 .modal_close {
   position: absolute;
-  right: -42px;
+  align-self: flex-end;
   top: -52px;
+  right: -42px;
   width: 52px;
   height: 52px;
   border-radius: 100%;
   border: 2px solid #f1cdb3;
-  background-color: #fff;
   cursor: pointer;
 }
 .modal_close > svg {
@@ -952,11 +965,14 @@ p {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+@media screen and (max-width: 735px) {
+  .modal_close {
+    right: -30px;
+  }
+}
 .modal_body {
   position: relative;
   display: flex;
-  width: 900px;
-  min-height: 500px;
   border-radius: 9px;
   background-color: #fff;
   justify-content: space-between;
@@ -965,11 +981,40 @@ p {
   margin-top: 51px;
   margin-right: 20px;
   margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 1000px) {
+  .modal_info {
+    margin: 11px 9px 0px 10px;
+    height: auto;
+  }
+}
+@media screen and (max-width: 735px) {
+  .modal_info {
+    align-items: center;
+    margin: 10px;
+  }
 }
 .modal_img {
   flex-shrink: 0;
   width: 500px;
   height: 500px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 1000px) {
+  .modal_img {
+    width: 350px;
+    height: 350px;
+  }
+}
+@media screen and (max-width: 735px) {
+  .modal_img {
+    display: none;
+  }
 }
 .modal_img img {
   width: 100%;
@@ -996,8 +1041,25 @@ p {
   margin-top: 40px;
   margin-bottom: 40px;
 }
+@media screen and (max-width: 1000px) {
+  .modal .description {
+    font-size: 13px;
+    margin: 21px 0 18px;
+    line-height: 108%;
+  }
+}
+@media screen and (max-width: 735px) {
+  .modal .description {
+    text-align: justify;
+  }
+}
 .modal .parameteres {
   font-family: Georgia, "Times New Roman", Times, serif;
+}
+@media screen and (max-width: 735px) {
+  .modal .parameteres {
+    align-self: flex-start;
+  }
 }
 .modal .parameteres .parameter {
   position: relative;
@@ -1007,16 +1069,20 @@ p {
   letter-spacing: 0.06em;
   line-height: 120%;
 }
+@media screen and (max-width: 1000px) {
+  .modal .parameteres .parameter {
+    margin-bottom: 5px;
+  }
+}
 .modal .parameteres .parameter::before {
   content: "";
   position: absolute;
-  top: 50%;
+  top: 7px;
   left: 0;
   width: 4px;
   height: 4px;
   border-radius: 100%;
   background-color: #f1cdb3;
-  transform: translate(0, -50%);
 }
 .modal .parameteres .parameter > span {
   color: #000;
