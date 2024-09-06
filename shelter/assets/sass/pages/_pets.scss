@@ -1,7 +1,8 @@
+$card-heigth: 435px;
 .pets_wrapper {
   @include flexcolumn;
   gap: 59px;
-  width: 100%;
+  max-width: 1200px;
   align-items: center;
   @media screen and (max-width: 970px) {
     gap: 38px;
@@ -14,12 +15,17 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 100%;
+  max-width: 100%;
+  max-height: calc($card-heigth * 2 + 30px);
   row-gap: 30px;
   column-gap: 40px;
   overflow: hidden;
-  @media screen and (max-width: 970px) {
-    max-height: calc(435px * 3 + 30px * 2);
+  @media screen and (max-width: 1296px) {
+    column-gap: 30px;
+  }
+  @media screen and (max-width: 946px) {
+    max-height: calc($card-heigth * 3 + 30px * 2);
+    column-gap: 40px;
   }
 }
 .header-container-pets {

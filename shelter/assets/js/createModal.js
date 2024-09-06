@@ -1,8 +1,7 @@
 
 import { back, removeBack } from '/assets/js/back.js';
-import { petsList } from '/assets/js/slider.js';
 
-export const createModal = (id) => {
+const createModal = (petsList, id) => {
   let inoculations = '';
   let diseases = '';
   let parasites = '';
