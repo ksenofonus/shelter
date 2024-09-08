@@ -1681,12 +1681,17 @@ p {
   display: flex;
   flex-direction: column;
   gap: 59px;
-  max-width: 1200px;
+  width: 100%;
   align-items: center;
 }
 @media screen and (max-width: 970px) {
   .pets_wrapper {
     gap: 38px;
+  }
+}
+@media screen and (max-width: 946px) {
+  .pets_wrapper {
+    min-height: 1365px;
   }
 }
 @media screen and (max-width: 320px) {
@@ -1700,11 +1705,25 @@ p {
   flex-wrap: wrap;
   justify-content: center;
   max-width: 100%;
-  max-height: 900px;
   row-gap: 30px;
   -moz-column-gap: 40px;
        column-gap: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.pets_menu-wrapper {
+  max-height: 900px;
   overflow: hidden;
+  position: relative;
+  width: 100%;
+  min-height: 900px;
+  flex-grow: 1;
+}
+@media screen and (max-width: 946px) {
+  .pets_menu-wrapper {
+    min-height: 1365px;
+  }
 }
 @media screen and (max-width: 1296px) {
   .pets_menu {
@@ -1714,7 +1733,6 @@ p {
 }
 @media screen and (max-width: 946px) {
   .pets_menu {
-    max-height: 1365px;
     -moz-column-gap: 40px;
          column-gap: 40px;
   }
