@@ -43,7 +43,10 @@ let startOrder = getStartOrder();
 
 
 const petsMenu = document.querySelector('.pets_menu');
+const petsWrapper = document.querySelector('.pets_menu-wrapper');
 let pageCount = checkWidth();
+let pageHeight;
+
 createCards(petsMenu, startOrder);
 let menuCards = document.querySelectorAll('.pets');
 showModal(menuCards);
@@ -59,6 +62,7 @@ let pageNumber = parseInt(page.innerHTML);
 
 toNext.addEventListener('click', () => {
   pageNumber += 1;
+  pageHeight = (petsWrapper.offsetHeight + 30) * (pageNumber - 1);
   page.innerHTML = pageNumber.toString();
   pageCount = checkWidth();
   if (pageNumber > pageCount + 1) {
@@ -76,10 +80,12 @@ toNext.addEventListener('click', () => {
     toStart.classList.remove('button__circle-inactive');
     toStart.removeAttribute('disabled');
   }
+  petsMenu.style.top =  -pageHeight + 'px';
 })
 
 toPrev.addEventListener('click', () => {
   pageNumber -= 1;
+  pageHeight = (petsWrapper.offsetHeight + 30) * (pageNumber - 1);
   page.innerHTML = pageNumber.toString();
   pageCount = checkWidth();
   if (pageNumber < 2) {
@@ -97,10 +103,12 @@ toPrev.addEventListener('click', () => {
     toEnd.classList.remove('button__circle-inactive');
     toEnd.removeAttribute('disabled');
   }
+  petsMenu.style.top =  parseInt(petsMenu.style.top) + (petsWrapper.offsetHeight + 30) + 'px';
 })
 
 toStart.addEventListener('click', () => {
   page.innerHTML = '1';
+  pageNumber = 1;
   toStart.setAttribute('disabled', 'true');
   toStart.classList.add('button__circle-inactive');
   toPrev.setAttribute('disabled', 'true');
@@ -109,10 +117,13 @@ toStart.addEventListener('click', () => {
   toNext.removeAttribute('disabled');
   toEnd.classList.remove('button__circle-inactive');
   toEnd.removeAttribute('disabled');
+  petsMenu.style.top = '0px';
 })
 
 toEnd.addEventListener('click', () => {
   page.innerHTML = checkWidth().toString();
+  pageNumber = checkWidth();
+  pageHeight = (petsWrapper.offsetHeight + 30) * (pageNumber - 1);
   toEnd.classList.add('button__circle-inactive');
   toNext.classList.add('button__circle-inactive');
   toEnd.setAttribute('disabled', 'true');
@@ -121,6 +132,7 @@ toEnd.addEventListener('click', () => {
   toPrev.removeAttribute('disabled');
   toStart.classList.remove('button__circle-inactive');
   toStart.removeAttribute('disabled');
+  petsMenu.style.top =  -pageHeight + 'px';
 })
 
 window.addEventListener('resize', () => {
