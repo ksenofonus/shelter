@@ -1,4 +1,4 @@
-import { getPetsData } from '/assets/js/pets.js';
+import { checkWidth } from '/assets/js/width.js';
 import { getRandomStartOrder } from '/assets/js/getRandomOrder.js';
 import { showModal, petsList } from '/assets/js/popap.js';
 
@@ -43,9 +43,99 @@ let startOrder = getStartOrder();
 
 
 const petsMenu = document.querySelector('.pets_menu');
+const petsWrapper = document.querySelector('.pets_menu-wrapper');
+let pageCount = checkWidth();
+let pageHeight;
+
 createCards(petsMenu, startOrder);
 let menuCards = document.querySelectorAll('.pets');
 showModal(menuCards);
 
 
 
+const toStart = document.querySelector('.button_start');
+const toPrev = document.querySelector('.button_prev');
+const toNext = document.querySelector('.button_next');
+const toEnd = document.querySelector('.button_end');
+const page = document.querySelector('.button_page');
+let pageNumber = parseInt(page.innerHTML);
+
+toNext.addEventListener('click', () => {
+  pageNumber += 1;
+  pageHeight = (petsWrapper.offsetHeight + 30) * (pageNumber - 1);
+  page.innerHTML = pageNumber.toString();
+  pageCount = checkWidth();
+  if (pageNumber > pageCount + 1) {
+   pageNumber = pageCount;
+  }
+  if (pageNumber === pageCount) {
+    toEnd.classList.add('button__circle-inactive');
+    toNext.classList.add('button__circle-inactive');
+    toEnd.setAttribute('disabled', 'true');
+    toNext.setAttribute('disabled', 'true');
+  }
+  if (toPrev.hasAttribute('disabled')) {
+    toPrev.removeAttribute('disabled');
+    toPrev.classList.remove('button__circle-inactive');
+    toStart.classList.remove('button__circle-inactive');
+    toStart.removeAttribute('disabled');
+  }
+  petsMenu.style.top =  -pageHeight + 'px';
+})
+
+toPrev.addEventListener('click', () => {
+  pageNumber -= 1;
+  pageHeight = (petsWrapper.offsetHeight + 30) * (pageNumber - 1);
+  page.innerHTML = pageNumber.toString();
+  pageCount = checkWidth();
+  if (pageNumber < 2) {
+    pageNumber = 1;
+   }
+  if (pageNumber === 1) {
+    toStart.setAttribute('disabled', 'true');
+    toStart.classList.add('button__circle-inactive');
+    toPrev.setAttribute('disabled', 'true');
+    toPrev.classList.add('button__circle-inactive');
+  }
+  if (toNext.hasAttribute('disabled')) {
+    toNext.removeAttribute('disabled');
+    toNext.classList.remove('button__circle-inactive');
+    toEnd.classList.remove('button__circle-inactive');
+    toEnd.removeAttribute('disabled');
+  }
+  petsMenu.style.top =  parseInt(petsMenu.style.top) + (petsWrapper.offsetHeight + 30) + 'px';
+})
+
+toStart.addEventListener('click', () => {
+  page.innerHTML = '1';
+  pageNumber = 1;
+  toStart.setAttribute('disabled', 'true');
+  toStart.classList.add('button__circle-inactive');
+  toPrev.setAttribute('disabled', 'true');
+  toPrev.classList.add('button__circle-inactive');
+  toNext.classList.remove('button__circle-inactive');
+  toNext.removeAttribute('disabled');
+  toEnd.classList.remove('button__circle-inactive');
+  toEnd.removeAttribute('disabled');
+  petsMenu.style.top = '0px';
+})
+
+toEnd.addEventListener('click', () => {
+  page.innerHTML = checkWidth().toString();
+  pageNumber = checkWidth();
+  pageHeight = (petsWrapper.offsetHeight + 30) * (pageNumber - 1);
+  toEnd.classList.add('button__circle-inactive');
+  toNext.classList.add('button__circle-inactive');
+  toEnd.setAttribute('disabled', 'true');
+  toNext.setAttribute('disabled', 'true');
+  toPrev.classList.remove('button__circle-inactive');
+  toPrev.removeAttribute('disabled');
+  toStart.classList.remove('button__circle-inactive');
+  toStart.removeAttribute('disabled');
+  petsMenu.style.top =  -pageHeight + 'px';
+})
+
+window.addEventListener('resize', () => {
+  pageCount = checkWidth();
+  if (toEnd.hasAttribute('disabled')) page.innerHTML = pageCount.toString();
+})
