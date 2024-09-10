@@ -23,6 +23,7 @@
     border-radius: 100%;
     border: 2px solid $color-primary;
     cursor: pointer;
+    transition: all .5s ease;
     & > svg {
       position: absolute;
       top: 50%;
@@ -31,6 +32,9 @@
     }
     @media screen and (max-width: 735px) {
       right: -30px;
+    }
+    &:hover {
+      background-color: $color-primary;
     }
   }
   &_body {
