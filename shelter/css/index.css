@@ -900,29 +900,12 @@ p {
   background-color: #000;
 }
 
-@-webkit-keyframes toRight {
-  from {
-    translate: 0% 0%;
-  }
-  to {
-    translate: 100% 0%;
-  }
-}
-
 @keyframes toRight {
   from {
     translate: 0% 0%;
   }
   to {
     translate: 100% 0%;
-  }
-}
-@-webkit-keyframes toLeft {
-  from {
-    translate: 0% 0%;
-  }
-  to {
-    translate: -100% 0%;
   }
 }
 @keyframes toLeft {
@@ -934,21 +917,15 @@ p {
   }
 }
 .slide-to-left {
-  -webkit-animation-name: toLeft;
-          animation-name: toLeft;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
+  animation-name: toLeft;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
 }
 
 .slide-to-right {
-  -webkit-animation-name: toRight;
-          animation-name: toRight;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
+  animation-name: toRight;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
 }
 
 .modal {
@@ -981,6 +958,7 @@ p {
   border-radius: 100%;
   border: 2px solid #f1cdb3;
   cursor: pointer;
+  transition: all 0.5s ease;
 }
 .modal_close > svg {
   position: absolute;
@@ -992,6 +970,9 @@ p {
   .modal_close {
     right: -30px;
   }
+}
+.modal_close:hover {
+  background-color: #f1cdb3;
 }
 .modal_body {
   position: relative;
