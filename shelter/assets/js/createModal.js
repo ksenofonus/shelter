@@ -1,5 +1,5 @@
 
-import { back, removeBack } from '/assets/js/back.js';
+import { back, removeBack } from './assets/js/back.js';
 
 const createModal = (petsList, id) => {
   let inoculations = '';
