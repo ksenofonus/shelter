@@ -1,6 +1,6 @@
-import { getPetsData } from '/assets/js/pets.js';
-import { getRandomStartOrder, getRandomNextOrder } from '/assets/js/getRandomOrder.js';
-import { showModal, petsList } from '/assets/js/popap.js';
+
+import { getRandomStartOrder, getRandomNextOrder } from './getRandomOrder.js';
+import { showModal, petsList } from './popap.js';
 
 const slider = document.querySelector('.slider-wrapper');
 const cardActive = document.querySelector('.cards-wrapper__active')

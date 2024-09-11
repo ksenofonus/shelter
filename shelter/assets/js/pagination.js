@@ -1,6 +1,6 @@
-import { checkWidth } from '/assets/js/width.js';
-import { getRandomStartOrder } from '/assets/js/getRandomOrder.js';
-import { showModal, petsList } from '/assets/js/popap.js';
+import { checkWidth } from './assets/js/width.js';
+import { getRandomStartOrder } from './assets/js/getRandomOrder.js';
+import { showModal, petsList } from './assets/js/popap.js';
 
 
 const getStartOrder = () => {
