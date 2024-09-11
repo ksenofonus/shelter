@@ -1,7 +1,6 @@
 
-import { getPetsData } from '/assets/js/pets.js';
-import { createBack } from '/assets/js/back.js';
-import { back, removeBack } from '/assets/js/back.js';
+import { getPetsData } from './pets.js';
+import { createBack, back, removeBack } from './back.js';
 
 const createModal = (petsList, id) => {
   let inoculations = '';
