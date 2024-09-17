@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>audio-player</title>
+</head>
+<body>
+    <img src="./assets/images/cheek-to-cheek.png" class="background">
+    <audio src="./assets/audio/Cheek_to_Cheek.mp3" class="music">
+    </audio>
+    <div class="container">
+        <div class="audio__cover">
+          <img src="./assets/images/cheek-to-cheek.png">
+        </div>
+        <div class="audio__player">
+          <div class="controls">
+            <div class="buttons">
+            <div class="play-button"></div>
+            <div class="info">
+              <p class="singer">Louis Armstrong</p>
+              <p class="song">Cheek to Cheek</p>
+            </div>
+            <div class="ctrl_button">
+              <img class="next" src="./assets/icons/forward.png">
+              <img class="prev" src="./assets/icons/backward.png">
+            </div>
+          </div>
+          <div class="audio-length"></div>
+          <div class="timeline">
+            <div class="progressbar"></div>
+          </div>
+          <div class="curent">0:00</div>
+        </div>
+      </div>
+    </div>
+  <footer class="footer">
+    <p class="author">Made by <a href="https://github.com/ksenofonus" class="author">Ksenofonus</a></p>
+    <p class="year">2023</p>
+    <a href="https://rs.school/js-stage0/"><img src="./assets/icons/rs_school_js.svg" width="100px"></a>
+  </footer>
+  <script src="index.js"></script>
+</body>
+</html>

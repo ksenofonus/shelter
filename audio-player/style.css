@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  filter: blur(5px);
+}
+.container {
+  position: absolute;
+  height: 300pt;
+  width: 250pt;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px 5px rgb(38, 36, 36);
+}
+.audio__cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.audio__player {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30%;
+  background-color: rgb(75, 72, 72);
+  display: flex;
+  flex-direction: column;
+}
+.controls {
+  width: 100%;
+  height: auto;
+  display:flex;
+  flex-direction: column;
+}
+.buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 10px;
+}
+.play-button {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  background: url("./assets/icons/play.png") no-repeat center center;
+  background-size: cover;
+  filter: invert(1);
+}
+.pause {
+  background: url("./assets/icons/pause.png") no-repeat center center;
+  background-size: cover;
+  filter: invert(1);
+}
+.info {
+  width: 50%;
+}
+.singer {
+  font-size: 22px;
+  font-weight: bold;
+  color: greenyellow;
+}
+.song {
+  font-size: 18px;
+  color: white;
+  text-transform: capitalize;
+}
+.ctrl_button {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.ctrl_button img{
+  filter:invert(1);
+  width: 30px;
+  height: auto;
+}
+.ctrl_button img:hover,
+.play:hover {
+  opacity: 0.6;
+  transition: 0.5s;
+}
+.timeline {
+  position: relative;
+  width: 65%;
+  height: 5px;
+  background-color: black;
+  margin: 20px auto;
+  cursor: pointer;
+}
+.progressbar {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 6px;
+  height: 10px;
+  background-color: greenyellow;
+  border-radius: 4px;
+  transition: 0.1s;
+}
+.curent {
+  position: absolute;
+  font-size: 16px;
+  color: white;
+  bottom: 5px;
+  left: 18%;
+}
+.audio-length {
+  position: absolute;
+  font-size: 16px;
+  color: rgb(85, 236, 68);
+  bottom: 32px;
+  right: 18%;
+}
+.footer {
+  position: absolute;
+  width: 100%;
+  bottom: 5%;
+  display: flex;
+  justify-content: center;
+  gap: 20%;
+}
+.footer p,
+.footer a {
+  color: red;
+}
