@@ -11,7 +11,8 @@
 
 .footer {
   max-width: 100vw;
-  min-height: 100px;
+  min-height: 120px;
+  padding-top: 20px;
 }
 .footer p {
   font-weight: bold;
@@ -24,6 +25,9 @@
 }
 
 .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   max-width: 100vw;
   min-height: 100px;
   position: relative;
@@ -54,17 +58,19 @@
   height: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 10px;
-  gap: 10px;
+  gap: 25px;
 }
 
 .card {
-  width: 420px;
-  height: 500px;
+  width: 400px;
+  height: 300px;
 }
-.card img {
+.card > img {
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
 }/*# sourceMappingURL=index.css.map */
