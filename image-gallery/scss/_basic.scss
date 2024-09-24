@@ -1,10 +1,15 @@
-* {
-  margin: 0;
-  padding: 0;
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  color: blueviolet;
 }
 
 .wrapper {
   max-width: 1280px;
   margin: 0 auto;
-  min-height: 100%;
+  height: 100%;
+  padding: 0 20px;
 }
+

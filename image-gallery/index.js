@@ -10,11 +10,9 @@ getData();
 
 const showcards = (data) => {
   for (let i = 0; i < data.length; i++) {
-		wrapper.insertAdjacentHTML(
-			"afterbegin",
-			`<div class="card"><img src="${data[i].urls.regular}" alt="${data[i].alt_description}"/></div>`,
-		);
-	}
+    wrapper.insertAdjacentHTML(
+      "afterbegin",
+      `<div class="card"><img src="${data[i].urls.regular}" alt="${data[i].alt_description}"/></div>`,
+    );
+  }
 };
-
-

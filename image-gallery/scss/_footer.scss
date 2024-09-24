@@ -10,5 +10,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    & > a {
+    text-decoration: none;
+    transition: all .5s ease;
+    color: blueviolet;
   }
+  }
+  &_logo img {
+    width: 100px;
+  }
+}
+.author > a {
+  text-decoration: none;
+  color: blueviolet;
 }
