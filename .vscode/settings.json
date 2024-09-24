@@ -1,0 +1,10 @@
+{
+  "prettier.bracketSameLine": true,
+  "prettier.endOfLine": "auto",
+  "prettier.htmlWhitespaceSensitivity": "strict",
+  "prettier.resolveGlobalModules": true,
+  "prettier.singleAttributePerLine": true,
+  "prettier.trailingComma": "all",
+  "prettier.useTabs": true,
+  "prettier.singleQuote": false
+}
