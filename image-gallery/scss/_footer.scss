@@ -1,0 +1,26 @@
+.footer {
+  max-width: 100vw;
+  min-height: 120px;
+  padding-top: 20px;
+  & p {
+    font-weight: bold;
+    font-size: 24px;
+  }
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & > a {
+    text-decoration: none;
+    transition: all .5s ease;
+    color: blueviolet;
+  }
+  }
+  &_logo img {
+    width: 100px;
+  }
+}
+.author > a {
+  text-decoration: none;
+  color: blueviolet;
+}

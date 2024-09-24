@@ -1,0 +1,21 @@
+.image-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 25px;
+}
+.card {
+  width: 390px;
+  height: 280px;
+  cursor: pointer;
+  & > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
