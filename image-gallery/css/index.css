@@ -71,20 +71,37 @@ body {
 
 .search {
   position: relative;
+  width: 450px;
 }
 .search_icon {
   position: absolute;
-  right: 10px;
+  right: 20px;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
 }
+.search_clear {
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  visibility: hidden;
+}
+.search_clear__active {
+  visibility: visible;
+}
 
 #search_field {
-  width: 500px;
+  outline: none;
+  width: 100%;
   padding: 10px 10px;
   border: 1px solid #bdbdbd;
   border-radius: 10px;
+}
+#search_field:focus {
+  outline: 3px solid blueviolet;
+  box-shadow: 0 0 5px 5px #888;
 }
 
 .image-wrapper {
