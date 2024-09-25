@@ -85,11 +85,9 @@ body {
   right: 50px;
   top: 50%;
   transform: translateY(-50%);
-  cursor: pointer;
-  visibility: hidden;
 }
 .search_clear__active {
-  visibility: visible;
+  cursor: pointer;
 }
 
 #search_field {

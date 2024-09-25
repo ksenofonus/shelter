@@ -40,10 +40,8 @@
 		right: 50px;
 		top: 50%;
 		transform: translateY(-50%);
-		cursor: pointer;
-		visibility: hidden;
 		&__active {
-			visibility: visible;
+			cursor: pointer;
 		}
 	}
 }
