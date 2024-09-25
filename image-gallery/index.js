@@ -11,10 +11,9 @@ const getData = async () => {
 		const result = await fetch(url);
 		const data = await result.json();
 		showcards(data);
-
 		return data;
 	} catch {
-		alert('API cannot provide such data/ Please, try again');
+		alert('API cannot provide such data. Please make a correct request');
 	}
 };
 
@@ -49,7 +48,7 @@ const search = () => {
 };
 
 document.addEventListener('keyup', (event) => {
-	if (event.code === 'Enter') {
+	if (event.code === 'Enter' && field.value) {
 		search();
 	} else {
 		if (!searchClear.classList.contains('search_clear__active')) {
@@ -59,7 +58,10 @@ document.addEventListener('keyup', (event) => {
 });
 
 searchIcon.addEventListener('click', () => {
-	search();
+	if (field.value) {
+		search();
+	}
+	field.focus();
 });
 
 searchClear.addEventListener('click', () => {
