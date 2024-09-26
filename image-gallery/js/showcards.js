@@ -6,7 +6,11 @@ export const showcards = (data) => {
 			`<div class="card"><img src="" alt=""/></div>`,
 		);
 	}
-	const cards = wrapper.querySelectorAll('img');
+  setImgAttribute(data);
+};
+
+export const setImgAttribute = (data) => {
+  const cards = wrapper.querySelectorAll('img');
 	cards.forEach((card, index) => {
 		if (data.hasOwnProperty('results')) {
 			card.setAttribute('src', `${data.results[index].urls.regular}`);
