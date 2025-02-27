@@ -1,1 +1,1 @@
-https://ksenofonus.github.io/shelter/shelter/index.html
+https://ksenofonus.github.io/shelter/
